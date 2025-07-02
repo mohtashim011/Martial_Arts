@@ -637,7 +637,7 @@ nav a.active {
 /* Desktop styles (min-width 768px and up) */
 @media (min-width: 768px) {
   .custom-video {
-    height: 450px; /* or any fixed height */
+    height: 420px; /* or any fixed height */
      width: 60%;
   }
 }
