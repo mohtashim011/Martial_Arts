@@ -636,7 +636,7 @@ nav a.active {
 
 @media (max-width: 1100px) {
 .cusom-marg{
-        margin-top: -268px;
+        margin-top: -268px !important;
     }
 }
 
