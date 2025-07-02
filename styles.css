@@ -395,22 +395,21 @@ nav a.active {
 
 
 .video-js {
-  width: 100% !important;
-  height: auto !important;
-  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 
   .vjs-control-bar {
     background-color: rgba(0, 0, 0, 0.6);
   }
 
   .vjs-big-play-button {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 3rem;
   }
 }
+
 
 
 
