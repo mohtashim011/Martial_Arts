@@ -178,7 +178,7 @@ body {
 }
 
 .section-background {
-background: linear-gradient(90deg, #00000085, #00000000) !important;
+    background: linear-gradient(90deg, #000000, #0000008c);
 }
 
 .position_absolute {
