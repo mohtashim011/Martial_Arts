@@ -394,19 +394,41 @@ nav a.active {
 /* /////////////////////////////////////////////// */
 
 
-   body {
-      background: #111;
-      padding: 50px;
-      display: flex;
-      justify-content: center;
-    }
-    .video-js {
-      width: 640px;
-      height: 360px;
-      border-radius: 12px;
-    }
+   .video-section {
+    position: relative;
+    padding: 50px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+  }
 
+  .video-content {
+    max-width: 800px;
+    margin: auto;
+  }
 
+  .video-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .underline {
+    width: 100px;
+    height: 4px;
+    background-color: #ffcc00;
+    margin: 0 auto 30px;
+  }
+
+  .video-js {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .video-overlay {
+    pointer-events: none; /* Allow video controls to work */
+  }
 
 
 
