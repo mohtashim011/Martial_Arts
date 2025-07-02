@@ -70,22 +70,21 @@
 
            <section class="video-section">
     <video
-      id="my-video"
-      class="video-js vjs-big-play-centered"
-      controls
-      preload="auto"
-      muted
-      playsinline
-      autoplay
-      poster="https://vjs.zencdn.net/v/oceans.png"
-      data-setup='{}'
-    >
-      <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
-      <p class="vjs-no-js">
-        To view this video please enable JavaScript, and consider upgrading to a
-        <a href="https://videojs.com/html5-video-support/" target="_blank">browser that supports HTML5 video</a>.
-      </p>
-    </video>
+  id="my-video"
+  class="video-js vjs-default-skin vjs-big-play-centered"
+  controls
+  preload="auto"
+  autoplay
+  muted
+  playsinline
+  poster="https://vjs.zencdn.net/v/oceans.png"
+  data-setup='{}'
+>
+  <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+  <p class="vjs-no-js">
+    Please enable JavaScript and upgrade to a browser that supports HTML5 video.
+  </p>
+</video>
     <div class="video-overlay"></div>
   </section>
 
@@ -358,17 +357,8 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
             <script src="script.js"></script>
             <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
-            <script>
-                const player = videojs('my-video', {
-                controls: true,
-                autoplay: true,
-                muted: true,
-                playsinline: true
-                });
-
-                player.ready(() => {
-                console.log('Video.js player initialized');
-                });
+           <script>
+            const player = videojs('my-video');
             </script>
 
 
