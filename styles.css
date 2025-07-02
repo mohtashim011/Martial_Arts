@@ -411,13 +411,13 @@ nav a.active {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-
+/* 
   .underline {
     width: 100px;
     height: 4px;
     background-color: #ffcc00;
     margin: 0 auto 30px;
-  }
+  } */
 
   .video-js {
     width: 100% !important;
@@ -942,7 +942,7 @@ nav a.active {
     height: 4px;
     margin: auto;
     border: 3px solid transparent;
-    border-top: 10px solid red;
+    border-top: 7px solid red;
 }
 
 .card {
@@ -1681,7 +1681,7 @@ nav a.active {
 
     .h_auto,
     .video-section {
-        height: auto;
+        height: 420px;
     }
 
     .philosophy-section {
