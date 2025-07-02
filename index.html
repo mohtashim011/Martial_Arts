@@ -67,16 +67,16 @@
                     </div>
                 </section>
             </div>
-
-          <div class="swiper-slide">
+<div class="swiper-slide">
   <section class="video-section" id="video_section">
-    <div class="d_flex height_100vh h_auto watchnow_watermark">
-      <div class="video-content animated">
+    <div class="d_flex watchnow_watermark" style="min-height: 100vh;">
+      <div class="video-content animated" style="width: 100%;">
         <div class="mt_mb_1rem">
           <h2 class="video-title">WATCH OUR <span class="highlight">PRACTICE</span></h2>
           <div class="underline"></div>
         </div>
-        <div class="video-background">
+        <div class="video-background" style="position: relative;">
+          <!-- ✅ VIDEO.JS PLAYER -->
           <video
             id="my-video"
             class="video-js vjs-default-skin vjs-big-play-centered"
@@ -86,14 +86,17 @@
             playsinline
             preload="auto"
             poster="https://vjs.zencdn.net/v/oceans.png"
-            data-setup="{}"
+            data-setup='{}'
+            style="width: 100%; border-radius: 15px;"
           >
             <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
             <p class="vjs-no-js">
-              Please enable JavaScript and upgrade your browser to view this video.
+              Please enable JavaScript to view this video.
             </p>
           </video>
-          <div class="video-overlay"></div>
+
+          <!-- ✅ TRANSPARENT OVERLAY (non-blocking) -->
+          <div class="video-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;"></div>
         </div>
       </div>
     </div>
@@ -370,18 +373,30 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
             <script src="script.js"></script>
             <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
-            <script>
-            const player = videojs('my-video', {
-                controls: true,
-                autoplay: true,
-                muted: true,
-                playsinline: true
-            });
+            <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
+<script>
+  const player = videojs('my-video', {
+    controls: true,
+    autoplay: true,
+    muted: true,
+    playsinline: true
+  });
 
-            player.ready(() => {
-                console.log("Video.js player is ready.");
-            });
-            </script>
+  player.ready(() => {
+    console.log("Video.js player ready");
+  });
+  on: {
+  slideChange: function () {
+    const video = videojs('my-video');
+    if (this.activeIndex === YOUR_VIDEO_SLIDE_INDEX) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+}
+</script>
+
 
 
 </body>
