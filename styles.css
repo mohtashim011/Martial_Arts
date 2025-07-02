@@ -628,7 +628,7 @@ nav a.active {
     cursor: pointer;
 }
 .custom-video {
-  width: 80%;
+ 
   height: auto;
   border-radius: 15px;
   object-fit: cover;
@@ -638,6 +638,7 @@ nav a.active {
 @media (min-width: 768px) {
   .custom-video {
     height: 500px; /* or any fixed height */
+     width: 60%;
   }
 }
 
@@ -645,6 +646,7 @@ nav a.active {
 @media (max-width: 767px) {
   .custom-video {
     height: 250px; /* or smaller height for phones */
+     width: 100%;
   }
 }
 
