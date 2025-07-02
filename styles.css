@@ -634,6 +634,12 @@ nav a.active {
   object-fit: cover;
 }
 
+@media (max-width: 1100px) {
+.cusom-marg{
+        margin-top: -268px;
+    }
+}
+
 /* Desktop styles (min-width 768px and up) */
 @media (min-width: 768px) {
   .custom-video {
