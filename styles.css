@@ -627,6 +627,26 @@ nav a.active {
     background: #ff0000;
     cursor: pointer;
 }
+.custom-video {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Desktop styles (min-width 768px and up) */
+@media (min-width: 768px) {
+  .custom-video {
+    height: 500px; /* or any fixed height */
+  }
+}
+
+/* Mobile styles (max-width 767px) */
+@media (max-width: 767px) {
+  .custom-video {
+    height: 250px; /* or smaller height for phones */
+  }
+}
 
 .controls-row {
     display: flex;
