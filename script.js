@@ -123,30 +123,56 @@ function animateContentOnSlideChange(currentIndex, previousIndex, isInit = false
 }
 
 // Initialize background sliders for all sections
-function initBackgroundSliders() {
-    const sliders = document.querySelectorAll('.background-slider');
+// function initBackgroundSliders() {
+//     const sliders = document.querySelectorAll('.background-slider');
 
-    sliders.forEach(slider => {
-        const slides = slider.querySelectorAll('.bg-slide');
-        let currentSlide = 0;
+//     sliders.forEach(slider => {
+//         const slides = slider.querySelectorAll('.bg-slide');
+//         let currentSlide = 0;
 
-        // Set initial positions for slides
-        slides.forEach((slide, index) => {
-            slide.style.transform = `translateY(${index * 100}%)`;
-        });
+//         // Set initial positions for slides
+//         slides.forEach((slide, index) => {
+//             slide.style.transform = `translateY(${index * 100}%)`;
+//         });
 
-        // If this is the hero section, add arrow functionality
-        if (slider.closest('.hero-section')) {
-            const arrow = document.getElementById('scrollArrow');
-            if (arrow) {
-                arrow.addEventListener('click', () => {
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    slider.style.transform = `translateY(-${currentSlide * 100}%)`;
-                });
-            }
-        }
-    });
-}
+//         // If this is the hero section, add arrow functionality
+//         if (slider.closest('.hero-section')) {
+//             const arrow = document.getElementById('scrollArrow');
+//             if (arrow) {
+//                 arrow.addEventListener('click', () => {
+//                     currentSlide = (currentSlide + 1) % slides.length;
+//                     slider.style.transform = `translateY(-${currentSlide * 100}%)`;
+//                 });
+//             }
+//         }
+//     });
+// }
+
+
+//code form GPT
+
+document.addEventListener('DOMContentLoaded', function () {
+  const backgroundSlider = document.querySelector('.background-slider');
+
+  if (!backgroundSlider) return;
+
+  const imagePaths = [
+    './assets/images/20250619_011059.png',
+    './assets/images/hero_image_3.png',
+    './assets/images/hero_image_4.png',
+    './assets/images/hero_image_5.png'
+  ];
+
+  const randomIndex = Math.floor(Math.random() * imagePaths.length);
+  const selectedImage = imagePaths[randomIndex];
+
+  // Set the background image of the single .bg-slide div
+  const bgSlide = backgroundSlider.querySelector('.bg-slide');
+  if (bgSlide) {
+    bgSlide.style.backgroundImage = `url('${selectedImage}')`;
+  }
+});
+
 
 // Initialize all background sliders when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
