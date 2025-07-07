@@ -314,7 +314,7 @@ nav a.active {
     align-self: flex-start;
     transition: 0.3s;
     font-size: 1rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     border: 2px solid transparent;
 }
 
@@ -615,7 +615,7 @@ nav a.active {
     cursor: pointer;
     -webkit-appearance: none;
     background: rgba(255,255,255,0.2);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     outline: none;
 }
 
@@ -702,7 +702,7 @@ nav a.active {
     display: none;
     -webkit-appearance: none;
     background: rgba(255,255,255,0.2);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     outline: none;
 }
 
@@ -1020,7 +1020,7 @@ nav a.active {
     font-family: 'Anton', sans-serif;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     font-size: 13px;
     transition: transform 0.2s;
 }
@@ -1311,7 +1311,7 @@ nav a.active {
 
 .social_btn{
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     transition: 0.3s;
 }
 
@@ -1939,7 +1939,7 @@ nav a.active {
     .form-group input[type="email"],
     .form-group input[type="tel"] {
         height: 33px;
-        border-radius: 5px;
+        /* border-radius: 5px; */
     }
 
     .popup_header {
@@ -1979,7 +1979,7 @@ nav a.active {
     align-self: flex-start;
     transition: 0.3s;
     font-size: 1rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 .unioin_image_white {
     transition: 0.3s;
