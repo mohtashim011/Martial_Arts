@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <!-- Libre Caslon Text from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
-
-    <title>Beyond Kung Fu | Wing Chun Foundation Lagos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title> Beyond Kung Fu | Wing Chun Foundation Lagos</title>
     <link rel="icon" href="./assets/images/Frame 246.svg" type="image/x-icon">
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css">
@@ -18,46 +17,40 @@
 </head>
 
 <body>
-    <div class="header-wrapper">     <header class="header-main">
-                                <!-- <img src="./assets/images/Frame 246.svg" alt="Logo" class="logo_1" /> -->
+    <div class="mySwiper">
+        <div class="swiper-wrapper">
+
+            <!-- Slide 1: Hero Section -->
+            <div class="swiper-slide">
+                <section class="hero-section" id="home_section">
+                    <div class="background-slider">
+                        <div class="bg-slide"></div>
+                        <div class="bg-slide" style="background-image: url('./assets/images/20250619_011059.png')"></div>
+                        <div class="bg-slide" style="background-image: url('./assets/images/hero_image_3.png')"></div>
+                        <div class="bg-slide" style="background-image: url('./assets/images/hero_image_4.png')"></div>
+                        <div class="bg-slide" style="background-image: url('./assets/images/hero_image_5.png')"></div>
+                    </div>
+                    <div class="section-background animated position_absolute width_100 height_100vh">
+                        <div class="content-wrapper">
+                            <header>
+                                <img src="./assets/images/Frame 246.svg" alt="Logo" class="logo_1" />
                                 <button class="mobile-menu-toggle">☰</button>
                                 <nav class="desktop-nav">
-                                    <div class="head-left">
                                     <button class="nav-link video">About</button>
-                                    <button class="nav-link programs">Programs</button></div>
-                                    <img src="./assets/images/logo.png" alt="Logo" class="logo_1" />
-                                    <div class="head-right">
-                                    <button class="nav-link enrollment">Enrollment</button>
-                                    <button class="nav-link contact">Contact</button></div>
+                                    <button class="nav-link programs">Programs</button>
+                                    <!-- <img src="./assets/images/Frame 246.svg" alt="Logo" class="logo_1" /> -->
+                                    <button class="nav-link enrollment">Enroll</button>
+                                    <button class="nav-link contact">Contact</button>
                                 </nav>
                                 <div class="mobile-nav">
-                                    <button class="close-menu">×</button>
+                                    <button class="close-menu"></button>
                                     <a href="#philosophy_section" class="nav-link video">About</a>
                                     <a href="#program_sections" class="nav-link programs">Programs</a>
                                     <a href="#enrollment_section" class="nav-link enrollment">Enrollment</a>
                                     <a href="#contact_section" class="nav-link contact">Contact</a>
                                 </div>
                             </header>
-</div>
 
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper hero">
-
-            <!-- Slide 1: Hero Section -->
-            <div class="swiper-slide">
-                <section class="hero-section" id="home_section">
-                   
-                    <div class="background-slider">
-                        <div class="bg-slide"></div>
-                        <!-- <div class="bg-slide" style="background-image: url('./assets/images/20250619_011059.png')"></div> -->
-                        <!-- <div class="bg-slide" style="background-image: url('./assets/images/hero_image_3.png')"></div>
-                        <div class="bg-slide" style="background-image: url('./assets/images/hero_image_4.png')"></div>
-                        <div class="bg-slide" style="background-image: url('./assets/images/hero_image_5.png')"></div> -->
-                    </div>
-                    <div class="section-background animated position_absolute width_100 height_100vh">
-                        <div class="content-wrapper">
-                            
-                        
                             <div class="hero-container">
                                 <div class="hero-content">
                                     <div class="p-35px p_0">
@@ -206,11 +199,9 @@
                                 <div>
                                     <h5 class="subheading">AUGUST 2025</h5>
                                     <p>Wing Chun Kung Fu</p>
-                                    
                                 </div>
-                                <div><p>Ikoyi,Lagos,Nigeria</p></div>
-                                 <div><button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
-                                        src="./assets/images/Union (1).svg"></button></div>
+                                <button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
+                                        src="./assets/images/Union (1).svg"></button>
                             </div>
 
                             <div class="enroll-item">
@@ -218,9 +209,8 @@
                                     <h5 class="subheading">SEPTEMBER, 2025</h5>
                                     <p>Tai Chi Kung Fu</p>
                                 </div>
-                                <div><p>Ikoyi,Lagos,Nigeria</p></div>
-                                <div> <button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
-                                        src="./assets/images/Union (1).svg"></button></div>
+                                <button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
+                                        src="./assets/images/Union (1).svg"></button>
                             </div>
 
                             <div class="enroll-item">
@@ -228,9 +218,8 @@
                                     <h5 class="subheading">OCTOBER, 2025</h5>
                                     <p>Wing Chun Kung Fu</p>
                                 </div>
-                                <div><p>Ikoyi,Lagos,Nigeria</p></div>
-                                <div><button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
-                                        src="./assets/images/Union (1).svg"></button></div>
+                                <button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
+                                        src="./assets/images/Union (1).svg"></button>
                             </div>
                         </div>
                     </div>
