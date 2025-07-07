@@ -10,7 +10,7 @@
 /* HTML & Body Scroll and Interaction Setup */
 html, body {
     touch-action: auto !important;
-    overflow-y: scroll !important;
+    overflow: auto !important;
     zoom: 1 !important;
     scroll-behavior: smooth;
     pointer-events: auto !important;
