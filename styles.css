@@ -17,10 +17,11 @@ html, body {
 }
 body {
     overflow-y: scroll !important;
+        height: auto !important;
 }
 
 html {
-    scroll-behavior: smooth !important;
+    scroll-behavior: auto !important;
 }
 
 header {

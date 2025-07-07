@@ -21,50 +21,25 @@ const handleClick = () => {
   if (button) button.addEventListener('click', handleClick);
 });
 
-// Initialize Swiper for desktop only
-let swiper;
-if (!isMobileDevice()) {
-  swiper = new Swiper('.mySwiper', {
-    direction: 'vertical',
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 1000,
-    mousewheel: {
-      enabled: true,
-      sensitivity: 1,
-      thresholdDelta: 50,
-      thresholdTime: 500,
-    },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: true,
-    },
-    touchRatio: 0,
-    grabCursor: false,
-    effect: 'slide',
-    allowTouchMove: false,
-    preventInteractionOnTransition: true,
-    on: {
-      init: function () {
-        animateContentOnSlideChange(this.activeIndex, null, true);
-      },
-      slideChangeTransitionStart: function () {
-        animateContentOnSlideChange(this.activeIndex, this.previousIndex);
-      }
-    }
-  });
+// Random background image setup
+document.addEventListener('DOMContentLoaded', function () {
+  const backgroundSlider = document.querySelector('.background-slider');
+  if (!backgroundSlider) return;
 
-  document.querySelector('.swiper')?.classList.add('swiper-desktop-only');
-} else {
-  // Mobile scroll mode
-  document.querySelector('.swiper')?.classList.add('swiper-mobile-scroll');
-  document.querySelector('.swiper-wrapper')?.classList.add('mobile-scroll-wrapper');
-  document.querySelectorAll('.swiper-slide').forEach(slide => {
-    slide.classList.add('mobile-scroll-slide');
-  });
-}
+  const imagePaths = [
+    './assets/images/20250619_011059.png',
+    './assets/images/hero_image_3.png',
+    './assets/images/hero_image_4.png',
+    './assets/images/hero_image_5.png'
+  ];
+  const randomImage = imagePaths[Math.floor(Math.random() * imagePaths.length)];
+  const bgSlide = backgroundSlider.querySelector('.bg-slide');
+  if (bgSlide) {
+    bgSlide.style.backgroundImage = `url('${randomImage}')`;
+  }
+});
 
-// Animate content in slide
+// Animate content in slide (desktop only)
 function animateContentOnSlideChange(currentIndex, previousIndex, isInit = false) {
   const slides = document.querySelectorAll('.swiper-slide');
   const currentSlide = slides[currentIndex];
@@ -106,25 +81,62 @@ function animateContentOnSlideChange(currentIndex, previousIndex, isInit = false
   }, 2000);
 }
 
-// Random background image setup
-document.addEventListener('DOMContentLoaded', function () {
-  const backgroundSlider = document.querySelector('.background-slider');
-  if (!backgroundSlider) return;
+// Swiper or normal scroll setup
+document.addEventListener('DOMContentLoaded', () => {
+  const swiperContainer = document.querySelector('.mySwiper');
 
-  const imagePaths = [
-    './assets/images/20250619_011059.png',
-    './assets/images/hero_image_3.png',
-    './assets/images/hero_image_4.png',
-    './assets/images/hero_image_5.png'
-  ];
-  const randomImage = imagePaths[Math.floor(Math.random() * imagePaths.length)];
-  const bgSlide = backgroundSlider.querySelector('.bg-slide');
-  if (bgSlide) {
-    bgSlide.style.backgroundImage = `url('${randomImage}')`;
+  if (!isMobileDevice()) {
+    // Desktop: Initialize Swiper
+    window.swiper = new Swiper('.mySwiper', {
+      direction: 'vertical',
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 1000,
+      mousewheel: {
+        enabled: true,
+        sensitivity: 1,
+        thresholdDelta: 50,
+        thresholdTime: 500,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      touchRatio: 0,
+      grabCursor: false,
+      effect: 'slide',
+      allowTouchMove: false,
+      preventInteractionOnTransition: true,
+      on: {
+        init: function () {
+          animateContentOnSlideChange(this.activeIndex, null, true);
+        },
+        slideChangeTransitionStart: function () {
+          animateContentOnSlideChange(this.activeIndex, this.previousIndex);
+        }
+      }
+    });
+  } else {
+    // Mobile: Destroy swiper structure completely
+    if (swiperContainer) {
+      swiperContainer.classList.remove('swiper', 'mySwiper');
+    }
+
+    const wrapper = document.querySelector('.swiper-wrapper');
+    if (wrapper) {
+      wrapper.classList.remove('swiper-wrapper');
+      wrapper.style.transform = 'none';
+      wrapper.style.height = 'auto';
+    }
+
+    document.querySelectorAll('.swiper-slide').forEach(slide => {
+      slide.classList.remove('swiper-slide');
+      slide.style.height = 'auto';
+    });
+
+    // Force default scroll
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.body.style.overflowY = 'scroll';
+    document.body.style.height = 'auto';
   }
 });
-
-// Add scrollbar on mobile
-if (isMobileDevice()) {
-  document.body.style.overflowY = 'scroll';
-}
