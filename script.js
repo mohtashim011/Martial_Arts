@@ -29,11 +29,11 @@ function animateContentOnScroll() {
     });
 }
 
-// Scroll to section on button click
+// Scroll to section on button click (no smooth scroll)
 function setupScrollButtons() {
     const scrollTo = (id) => {
         const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (el) el.scrollIntoView(); // Removed smooth scroll
     };
 
     const btnMap = {
@@ -43,7 +43,7 @@ function setupScrollButtons() {
         '.explore-btn': 'program_sections',
         '.enrollment': 'enrollment_section',
         '.footer_enrollment': 'enrollment_section',
-        '.video': 'about_section', // adjust if needed
+        '.video': 'about_section',
         '.programs': 'program_sections',
         '.footer_programs': 'program_sections',
         '.footer_about': 'about_section',
@@ -133,4 +133,3 @@ document.addEventListener('DOMContentLoaded', () => {
     animateContentOnScroll();
     injectScrollAnimationCSS();
 });
-
