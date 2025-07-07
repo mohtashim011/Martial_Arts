@@ -29,38 +29,38 @@ buttons.forEach(selector => {
 
 
 // Initialize Swiper only for non-mobile devices
-// let swiper;
-// if (!isMobileDevice()) {
-//     swiper = new Swiper('.mySwiper', {
-//         direction: 'vertical',
-//         slidesPerView: 1,
-//         spaceBetween: 0,
-//         speed: 1000,
-//         mousewheel: {
-//             enabled: true,
-//             sensitivity: 1,
-//             thresholdDelta: 50,
-//             thresholdTime: 500,
-//         },
-//         keyboard: {
-//             enabled: true,
-//             onlyInViewport: true,
-//         },
-//         touchRatio: 0, // Disable touch on desktop
-//         touchAngle: 45,
-//         grabCursor: false,
-//         effect: 'slide',
-//         allowTouchMove: false, // Disable touch move
-//         preventInteractionOnTransition: true,
-//         on: {
-//             init: function () {
-//                 animateContentOnSlideChange(this.activeIndex, null, true);
-//             },
-//             slideChangeTransitionStart: function () {
-//                 animateContentOnSlideChange(this.activeIndex, this.previousIndex);
-//             }
-//         }
-//     });
+let swiper;
+if (!isMobileDevice()) {
+    swiper = new Swiper('.mySwiper', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 1000,
+        mousewheel: {
+            enabled: true,
+            sensitivity: 1,
+            thresholdDelta: 50,
+            thresholdTime: 500,
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        touchRatio: 0, // Disable touch on desktop
+        touchAngle: 45,
+        grabCursor: false,
+        effect: 'slide',
+        allowTouchMove: false, // Disable touch move
+        preventInteractionOnTransition: true,
+        on: {
+            init: function () {
+                animateContentOnSlideChange(this.activeIndex, null, true);
+            },
+            slideChangeTransitionStart: function () {
+                animateContentOnSlideChange(this.activeIndex, this.previousIndex);
+            }
+        }
+    });
 
     // For mobile devices, we'll add a class to enable normal scrolling
     document.querySelector('.swiper').classList.add('swiper-desktop-only');
