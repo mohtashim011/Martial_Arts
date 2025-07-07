@@ -20,7 +20,7 @@ body {
 }
 
 html {
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth !important;
 }
 
 header {
