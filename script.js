@@ -29,38 +29,38 @@ buttons.forEach(selector => {
 
 
 // Initialize Swiper only for non-mobile devices
-let swiper;
-if (!isMobileDevice()) {
-    swiper = new Swiper('.mySwiper', {
-        direction: 'vertical',
-        slidesPerView: 1,
-        spaceBetween: 0,
-        speed: 1000,
-        mousewheel: {
-            enabled: true,
-            sensitivity: 1,
-            thresholdDelta: 50,
-            thresholdTime: 500,
-        },
-        keyboard: {
-            enabled: true,
-            onlyInViewport: true,
-        },
-        touchRatio: 0, // Disable touch on desktop
-        touchAngle: 45,
-        grabCursor: false,
-        effect: 'slide',
-        allowTouchMove: false, // Disable touch move
-        preventInteractionOnTransition: true,
-        on: {
-            init: function () {
-                animateContentOnSlideChange(this.activeIndex, null, true);
-            },
-            slideChangeTransitionStart: function () {
-                animateContentOnSlideChange(this.activeIndex, this.previousIndex);
-            }
-        }
-    });
+// let swiper;
+// if (!isMobileDevice()) {
+//     swiper = new Swiper('.mySwiper', {
+//         direction: 'vertical',
+//         slidesPerView: 1,
+//         spaceBetween: 0,
+//         speed: 1000,
+//         mousewheel: {
+//             enabled: true,
+//             sensitivity: 1,
+//             thresholdDelta: 50,
+//             thresholdTime: 500,
+//         },
+//         keyboard: {
+//             enabled: true,
+//             onlyInViewport: true,
+//         },
+//         touchRatio: 0, // Disable touch on desktop
+//         touchAngle: 45,
+//         grabCursor: false,
+//         effect: 'slide',
+//         allowTouchMove: false, // Disable touch move
+//         preventInteractionOnTransition: true,
+//         on: {
+//             init: function () {
+//                 animateContentOnSlideChange(this.activeIndex, null, true);
+//             },
+//             slideChangeTransitionStart: function () {
+//                 animateContentOnSlideChange(this.activeIndex, this.previousIndex);
+//             }
+//         }
+//     });
 
     // For mobile devices, we'll add a class to enable normal scrolling
     document.querySelector('.swiper').classList.add('swiper-desktop-only');
@@ -402,7 +402,9 @@ if (exploreBtn) {
             document.getElementById('program_sections')?.scrollIntoView({ behavior: 'smooth' });
         } else if (typeof swiper !== 'undefined') {
             // Desktop - go directly to slide 3 (zero-based index 2)
-            swiper.slideTo(3); // Change to 3 if your swiper uses 1-based index
+            //swiper.slideTo(5); // Change to 3 if your swiper uses 1-based index
+        document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         }
     });
 }
@@ -410,56 +412,72 @@ if (exploreBtn) {
     const videoButton = document.querySelector('.video');
     if (videoButton && typeof swiper !== 'undefined') {
         videoButton.addEventListener('click', () => {
-            swiper.slideTo(2); 
+            //swiper.slideTo(5); 
+            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
     const programsButton = document.querySelector('.programs');
     if (programsButton && typeof swiper !== 'undefined') {
         programsButton.addEventListener('click', () => {
-            swiper.slideTo(3); 
+            //swiper.slideTo(5); 
+            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
     const enrollmentButton = document.querySelector('.enrollment');
     if (enrollmentButton && typeof swiper !== 'undefined') {
         enrollmentButton.addEventListener('click', () => {
-            swiper.slideTo(5); 
+            //swiper.slideTo(5); 
+            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
     const contactButton = document.querySelector('.contact');
     if (contactButton && typeof swiper !== 'undefined') {
         contactButton.addEventListener('click', () => {
-            swiper.slideTo(7); 
+            //swiper.slideTo(5); 
+            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
     const homeButton = document.querySelector('.footer_home');
     if (homeButton && typeof swiper !== 'undefined') {
         homeButton.addEventListener('click', () => {
-            swiper.slideTo(0); 
+            //swiper.slideTo(5); 
+            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
     const footerAboutButton = document.querySelector('.footer_about');
     if (footerAboutButton && typeof swiper !== 'undefined') {
         footerAboutButton.addEventListener('click', () => {
-            swiper.slideTo(2); 
+            //swiper.slideTo(5); 
+            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
     const footerProgramsButton = document.querySelector('.footer_programs');
     if (footerProgramsButton && typeof swiper !== 'undefined') {
         footerProgramsButton.addEventListener('click', () => {
-            swiper.slideTo(3); 
+           // swiper.slideTo(3); 
+           document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
     const footerEnrollmentButton = document.querySelector('.footer_enrollment');
     if (footerEnrollmentButton && typeof swiper !== 'undefined') {
         footerEnrollmentButton.addEventListener('click', () => {
-            swiper.slideTo(5); 
+            //swiper.slideTo(5); 
+            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
+
         });
     }
 
