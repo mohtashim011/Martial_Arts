@@ -1,48 +1,84 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     user-select: text !important;
     -webkit-user-select: text !important;
     -ms-user-select: text !important;
+    /* width: 1320px; */
 }
 
 /* HTML & Body Scroll and Interaction Setup */
 html, body {
     touch-action: auto !important;
-    /* overflow-y: scroll !important; */
     zoom: 1 !important;
-    /* scroll-behavior: auto !important; */
+    overflow: hidden;
+    height: 100%;
     pointer-events: auto !important;
 }
-/* body {
-    overflow-y: scroll !important;
-}
-
-html {
-    scroll-behavior: auto !important;
-} */
 
 header {
     display: flex;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     font-size: 10px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0px !important;
     position: relative;
-    z-index: 1000;
+
+    width: 100%;
+}
+.swiper::-webkit-scrollbar {
+  height: 2px; /* for horizontal */
+  background: black;
+  width: 5px;
+  z-index: 100000000; /* Has no effect on native scrollbars */
 }
 
+.swiper::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.header-wrapper{
+    background-color: #ffff;
+    position: relative;
+    width: 100%;
+    z-index: 1000000  !important;
+}
+.desktop-nav{
+
+    display: flex;
+    max-width: 1300px;
+    justify-content:space-between  !important;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 0px 0px 0px;
+    z-index:100000;
+
+}
+.hero{
+    display: flex;
+    align-items: center;
+}
+header{
+    background-color: rgb(255, 255, 255);
+
+
+}
 .logo_1 {
     width: 7rem;
     height: auto;
     z-index: 1001;
 }
-
+nav{
+    display: flex;
+    align-items: center;
+}
 .desktop-nav .nav-link {
-    color: white;
-    font-family: 'inter', 'sans-serif';
+    color: rgb(0, 0, 0);
+    font-family: 'Libre Caslon Text', 'sans-serif';
     margin-left: 1.25rem;
     text-decoration: none;
     font-size: 1rem;
@@ -55,12 +91,12 @@ header {
     cursor: pointer;
 }
 
-.desktop-nav .nav-link:nth-child(4) {
-    border-color: rgba(255, 255, 255, 0.5);
+.contact{
+    border-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.desktop-nav .nav-link:nth-child(4):hover {
-    transform: scale(1.05);
+.contact:hover {
+    transform: scale(1.05) !important;
 }
 
 .footer_links{
@@ -69,7 +105,7 @@ header {
     font-size: 16px;
     color: #616161;
     cursor: pointer;
-    font-family: 'inter', 'sans-serif';
+    font-family: 'Libre Caslon Text', 'sans-serif';
     transition: 0.3s;
 }
 
@@ -82,7 +118,7 @@ header {
     display: none;
     background: none;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1.8rem;
     cursor: pointer;
     z-index: 1001;
@@ -117,7 +153,7 @@ header {
     text-align: center;
     background: transparent;
     border: none;
-    font-family: 'inter', 'sans-serif';
+    font-family: 'Libre Caslon Text', 'sans-serif';
 }
 
 .close-menu {
@@ -138,10 +174,11 @@ html {
     font-size: 100%;
     /* Base font size (16px) */
 }
-/* Desktop (Swiper full height) */
+
 .swiper {
     width: 100%;
     height: 100vh;
+    z-index: 1000;
 }
 
 .swiper-slide {
@@ -150,22 +187,10 @@ html {
     position: relative;
 }
 
-/* ✅ Mobile (scrolling layout) */
-@media (max-width: 1100px) {
-    .swiper {
-        height: auto !important;
-    }
-
-    .swiper-slide {
-        height: auto !important;
-        min-height: 100vh;
-    }
-}
-
 body {
     height: 100%;
-    font-family: 'Inter', sans-serif;
-    background-color: black;
+    font-family: 'Libre Caslon Text', sans-serif;
+    background-color: rgb(0, 0, 0);
     font-size: 1rem;
     /* Relative to html font-size */
     line-height: 1.5;
@@ -173,6 +198,7 @@ body {
 }
 
 .hero-section {
+    margin-top: 100px;
     position: relative;
     height: 100vh;
     min-height: 500px;
@@ -249,12 +275,12 @@ body {
 
 header {
     display: flex;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     /* font-weight: 100; */
     font-size: 10px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    padding: 1rem 0;
+    
 }
 
 .logo_1 {
@@ -306,7 +332,7 @@ nav a.active {
 .hero-content h1 {
     font-size: clamp(3rem, 5vw, 3rem);
     /* Responsive with minimum size */
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     line-height: 1.2;
 }
 
@@ -360,7 +386,7 @@ nav a.active {
 }
 
 .programs-button {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     font-weight: 100;
     background-color: transparent;
     border: 2px solid rgb(117 115 115);
@@ -542,7 +568,7 @@ nav a.active {
     font-size: 3rem;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     margin-bottom: 1rem;
 }
 
@@ -846,7 +872,7 @@ nav a.active {
 
 .philosophy-title {
     padding-left: 20px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
@@ -859,7 +885,7 @@ nav a.active {
 
 .programs-title {
     padding-left: 20px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
@@ -934,7 +960,7 @@ nav a.active {
 
 .content-title {
     color: white;
-    font-family: 'Anton';
+    font-family: 'Libre Caslon Text';
     font-size: 25px;
     margin: 35px 0;
     font-weight: 100;
@@ -1013,20 +1039,23 @@ nav a.active {
 }
 
 .subheading {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     font-size: 20px;
     font-weight: 100;
     text-transform: uppercase;
     margin-bottom: 10px;
     color: white;
+    width: 200px;
 }
 
 .enroll-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:start;
     border-top: 1px solid #333;
     padding: 20px 0;
+    gap: 100px;
+    width: 100%;
 }
 
 .enroll-item h3 {
@@ -1047,7 +1076,7 @@ nav a.active {
     background: #fff;
     color: #000;
     border: none;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     padding: 10px 20px;
     cursor: pointer;
     /* border-radius: 6px; */
@@ -1062,7 +1091,7 @@ nav a.active {
 .enroll-section {
     height: 100vh;
     display: grid;
-    align-items: center;
+    align-items: left;
 }
 
 /* POPUP STYLES */
@@ -1304,7 +1333,12 @@ nav a.active {
         text-align: left;
         padding: 25px;
     }
-
+    header{
+            justify-content: flex-start;
+    }
+    .enroll-item {
+        gap:10px !important;
+}
     .footer-left {
         padding-right: 0;
     }
@@ -1346,7 +1380,7 @@ nav a.active {
 }
 
 .footer_contact {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     color: #000;
     font-size: 35px;
     font-weight: 100;
@@ -1371,6 +1405,7 @@ nav a.active {
 
     .mobile-menu-toggle {
         display: block;
+        padding: 20px;
     }
 }
 
@@ -1379,6 +1414,8 @@ nav a.active {
     overflow-y: auto !important;
     height: 100vh !important;
     transform: none !important;
+    margin-top: -100px;
+    z-index: 15000;
 }
 
 .mobile-scroll-wrapper {
@@ -1457,7 +1494,7 @@ nav a.active {
 
 .popup_header {
     text-align: center;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     font-size: clamp(20px, 4vw, 28px);
     margin: 0 0 20px 0;
     font-weight: 400;
@@ -1473,7 +1510,7 @@ nav a.active {
     margin-bottom: 6px;
     font-weight: 600;
     color: #b1b1b1;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
     font-size: clamp(12px, 2.5vw, 14px);
 }
 
@@ -1659,6 +1696,7 @@ nav a.active {
 
     .hero-container {
         height: calc(85% - 6.25rem);
+                margin-top: 100px;
     }
 
     .explore-btn {
