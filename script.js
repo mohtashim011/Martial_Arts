@@ -658,3 +658,16 @@ document.addEventListener('DOMContentLoaded', function () {
     bgSlide.style.backgroundImage = `url('${selectedImage}')`;
   }
 });
+
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const logo = document.querySelector('.logo_1');
+
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('menu-open');
+
+  if (menuToggle.classList.contains('menu-open')) {
+    logo.classList.add('logo-hid');
+  } else {
+    logo.classList.remove('logo-hid');
+  }
+});
