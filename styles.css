@@ -12,7 +12,6 @@ html, body {
     touch-action: auto !important;
     overflow-y: auto !important;
     zoom: 1 !important;
-    scroll-behavior: smooth;
     pointer-events: auto !important;
 }
 
