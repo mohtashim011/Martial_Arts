@@ -2,7 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+/* HTML & Body Scroll and Interaction Setup */
+html, body {
+    touch-action: auto !important;
+    overflow: auto !important;
+    zoom: 1 !important;
+    scroll-behavior: smooth;
+    pointer-events: auto !important;
 }
 
 header {
