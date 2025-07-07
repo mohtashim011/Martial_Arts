@@ -30,7 +30,7 @@ header {
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     transition: all 0.3s ease;
     display: inline-block; /* Added this line */
     background-color: transparent;
@@ -245,7 +245,7 @@ nav a {
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     transition: all 0.3s ease;
 }
 
@@ -1823,7 +1823,7 @@ nav a.active {
       .enroll-btn{
         margin-top: 10px;
         font-size: 11px;
-        border-radius: 4px;
+        /* border-radius: 4px; */
         padding: 5px 20px;
       }
     
