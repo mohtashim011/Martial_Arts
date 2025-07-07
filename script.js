@@ -402,9 +402,7 @@ if (exploreBtn) {
             document.getElementById('program_sections')?.scrollIntoView({ behavior: 'smooth' });
         } else if (typeof swiper !== 'undefined') {
             // Desktop - go directly to slide 3 (zero-based index 2)
-            //swiper.slideTo(5); // Change to 3 if your swiper uses 1-based index
-        document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(3); // Change to 3 if your swiper uses 1-based index
         }
     });
 }
@@ -412,72 +410,56 @@ if (exploreBtn) {
     const videoButton = document.querySelector('.video');
     if (videoButton && typeof swiper !== 'undefined') {
         videoButton.addEventListener('click', () => {
-            //swiper.slideTo(5); 
-            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(2); 
         });
     }
 
     const programsButton = document.querySelector('.programs');
     if (programsButton && typeof swiper !== 'undefined') {
         programsButton.addEventListener('click', () => {
-            //swiper.slideTo(5); 
-            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(3); 
         });
     }
 
     const enrollmentButton = document.querySelector('.enrollment');
     if (enrollmentButton && typeof swiper !== 'undefined') {
         enrollmentButton.addEventListener('click', () => {
-            //swiper.slideTo(5); 
-            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(5); 
         });
     }
 
     const contactButton = document.querySelector('.contact');
     if (contactButton && typeof swiper !== 'undefined') {
         contactButton.addEventListener('click', () => {
-            //swiper.slideTo(5); 
-            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(7); 
         });
     }
 
     const homeButton = document.querySelector('.footer_home');
     if (homeButton && typeof swiper !== 'undefined') {
         homeButton.addEventListener('click', () => {
-            //swiper.slideTo(5); 
-            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(0); 
         });
     }
 
     const footerAboutButton = document.querySelector('.footer_about');
     if (footerAboutButton && typeof swiper !== 'undefined') {
         footerAboutButton.addEventListener('click', () => {
-            //swiper.slideTo(5); 
-            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(2); 
         });
     }
 
     const footerProgramsButton = document.querySelector('.footer_programs');
     if (footerProgramsButton && typeof swiper !== 'undefined') {
         footerProgramsButton.addEventListener('click', () => {
-           // swiper.slideTo(3); 
-           document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(3); 
         });
     }
 
     const footerEnrollmentButton = document.querySelector('.footer_enrollment');
     if (footerEnrollmentButton && typeof swiper !== 'undefined') {
         footerEnrollmentButton.addEventListener('click', () => {
-            //swiper.slideTo(5); 
-            document.getElementById('enrollment_section')?.scrollIntoView({ behavior: 'smooth' });
-
+            swiper.slideTo(5); 
         });
     }
 
