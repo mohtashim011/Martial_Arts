@@ -1,130 +1,136 @@
-// Utility: Check if device is mobile
+// Check if device is mobile
 function isMobileDevice() {
-  return window.innerWidth <= 1100 || typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
+    return window.innerWidth <= 1100 || typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
 }
 
-// Handle Get Started button clicks
-const handleClick = () => {
-  if (isMobileDevice()) {
-    const target = document.getElementById('enrollment_section');
-    if (target) {
-      target.scrollIntoView({ behavior: 'auto', block: 'start' }); // No smooth scroll
-    }
-  } else if (typeof swiper !== 'undefined') {
-    swiper.slideTo(5); // Desktop slide
-  }
-};
+// Animate content on scroll using IntersectionObserver
+function animateContentOnScroll() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const animatedDiv = entry.target.querySelector('.animated > div');
+            if (!animatedDiv) return;
 
-// Assign buttons to handler
-['.get_started', '.get_started_programs', '.get_started_disclaimer'].forEach(selector => {
-  const button = document.querySelector(selector);
-  if (button) button.addEventListener('click', handleClick);
+            if (entry.isIntersecting) {
+                animatedDiv.style.transition = 'transform 1s ease, opacity 1s ease';
+                animatedDiv.style.transform = 'translateY(0)';
+                animatedDiv.style.opacity = '1';
+            } else {
+                animatedDiv.style.transition = 'none';
+                animatedDiv.style.transform = 'translateY(50px)';
+                animatedDiv.style.opacity = '0';
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    document.querySelectorAll('.swiper-slide').forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Scroll to section on button click
+function setupScrollButtons() {
+    const scrollTo = (id) => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const btnMap = {
+        '.get_started': 'enrollment_section',
+        '.get_started_programs': 'enrollment_section',
+        '.get_started_disclaimer': 'enrollment_section',
+        '.explore-btn': 'program_sections',
+        '.enrollment': 'enrollment_section',
+        '.footer_enrollment': 'enrollment_section',
+        '.video': 'about_section', // adjust if needed
+        '.programs': 'program_sections',
+        '.footer_programs': 'program_sections',
+        '.footer_about': 'about_section',
+        '.contact': 'contact_section',
+        '.footer_home': 'hero_section'
+    };
+
+    Object.entries(btnMap).forEach(([selector, targetId]) => {
+        const el = document.querySelector(selector);
+        if (el) el.addEventListener('click', () => scrollTo(targetId));
+    });
+}
+
+// Mobile menu toggle
+function setupMobileMenu() {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.mobile-nav');
+    const close = document.querySelector('.close-menu');
+
+    if (!toggle || !nav || !close) return;
+
+    const navLinks = nav.querySelectorAll('.nav-link');
+
+    function openMenu() {
+        nav.classList.add('active');
+        toggle.classList.add('menu-open');
+        toggle.innerHTML = '×';
+    }
+
+    function closeMenu() {
+        nav.classList.remove('active');
+        toggle.classList.remove('menu-open');
+        toggle.innerHTML = '☰';
+    }
+
+    toggle.addEventListener('click', () => {
+        if (nav.classList.contains('active')) closeMenu();
+        else openMenu();
+    });
+
+    close.addEventListener('click', closeMenu);
+
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+}
+
+// Background image randomizer
+function setupRandomBackground() {
+    const backgroundSlider = document.querySelector('.background-slider');
+    if (!backgroundSlider) return;
+
+    const images = [
+        './assets/images/20250619_011059.png',
+        './assets/images/hero_image_3.png',
+        './assets/images/hero_image_4.png',
+        './assets/images/hero_image_5.png'
+    ];
+    const selected = images[Math.floor(Math.random() * images.length)];
+    const bgSlide = backgroundSlider.querySelector('.bg-slide');
+    if (bgSlide) {
+        bgSlide.style.backgroundImage = `url('${selected}')`;
+    }
+}
+
+// Add CSS dynamically for animated content
+function injectScrollAnimationCSS() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .animated > div {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', () => {
+    setupScrollButtons();
+    setupMobileMenu();
+    setupRandomBackground();
+    animateContentOnScroll();
+    injectScrollAnimationCSS();
 });
 
-// Initialize Swiper for desktop only
-let swiper;
-if (!isMobileDevice()) {
-  swiper = new Swiper('.mySwiper', {
-    direction: 'vertical',
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 1000,
-    mousewheel: {
-      enabled: true,
-      sensitivity: 1,
-      thresholdDelta: 50,
-      thresholdTime: 500,
-    },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: true,
-    },
-    touchRatio: 0,
-    grabCursor: false,
-    effect: 'slide',
-    allowTouchMove: false,
-    preventInteractionOnTransition: true,
-    on: {
-      init: function () {
-        animateContentOnSlideChange(this.activeIndex, null, true);
-      },
-      slideChangeTransitionStart: function () {
-        animateContentOnSlideChange(this.activeIndex, this.previousIndex);
-      }
-    }
-  });
-
-  document.querySelector('.swiper')?.classList.add('swiper-desktop-only');
-} else {
-  // Mobile scroll mode
-  document.querySelector('.swiper')?.classList.add('swiper-mobile-scroll');
-  document.querySelector('.swiper-wrapper')?.classList.add('mobile-scroll-wrapper');
-  document.querySelectorAll('.swiper-slide').forEach(slide => {
-    slide.classList.add('mobile-scroll-slide');
-  });
-}
-
-// Animate content in slide
-function animateContentOnSlideChange(currentIndex, previousIndex, isInit = false) {
-  const slides = document.querySelectorAll('.swiper-slide');
-  const currentSlide = slides[currentIndex];
-  if (!currentSlide) return;
-
-  const content = currentSlide.querySelector('.animated > div');
-  if (!content) return;
-
-  // Reset all animated elements
-  document.querySelectorAll('.swiper-slide .animated > div').forEach(el => {
-    el.style.transition = 'none';
-    el.style.transform = '';
-    el.style.opacity = '';
-  });
-
-  // Animate out previous content
-  if (!isInit && previousIndex !== undefined) {
-    const prevSlide = slides[previousIndex];
-    const prevContent = prevSlide?.querySelector('.animated > div');
-    if (prevContent) {
-      const direction = currentIndex > previousIndex ? -50 : 50;
-      prevContent.style.transition = 'transform 1.8s ease, opacity 1.8s ease';
-      prevContent.style.transform = `translateY(${direction}px)`;
-      prevContent.style.opacity = '0';
-    }
-  }
-
-  // Animate current content
-  const direction = previousIndex === undefined ? 0 : (currentIndex > previousIndex ? 50 : -50);
-  content.style.transform = `translateY(${direction}px)`;
-  content.style.opacity = '0';
-  void content.offsetWidth; // reflow
-  content.style.transition = 'transform 1.8s ease, opacity 1.8s ease';
-  content.style.transform = 'translateY(0)';
-  content.style.opacity = '1';
-
-  setTimeout(() => {
-    content.style.transition = 'none';
-  }, 2000);
-}
-
-// Random background image setup
-document.addEventListener('DOMContentLoaded', function () {
-  const backgroundSlider = document.querySelector('.background-slider');
-  if (!backgroundSlider) return;
-
-  const imagePaths = [
-    './assets/images/20250619_011059.png',
-    './assets/images/hero_image_3.png',
-    './assets/images/hero_image_4.png',
-    './assets/images/hero_image_5.png'
-  ];
-  const randomImage = imagePaths[Math.floor(Math.random() * imagePaths.length)];
-  const bgSlide = backgroundSlider.querySelector('.bg-slide');
-  if (bgSlide) {
-    bgSlide.style.backgroundImage = `url('${randomImage}')`;
-  }
-});
-
-// Add scrollbar on mobile
-if (isMobileDevice()) {
-  document.body.style.overflowY = 'scroll';
-}
