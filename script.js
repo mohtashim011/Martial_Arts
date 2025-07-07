@@ -133,3 +133,38 @@ document.addEventListener('DOMContentLoaded', () => {
     animateContentOnScroll();
     injectScrollAnimationCSS();
 });
+
+function setupScrollButtons() {
+    const scrollTo = (id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            // Force default jump scroll
+            el.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }
+    };
+
+    const btnMap = {
+        '.get_started': 'enrollment_section',
+        '.get_started_programs': 'enrollment_section',
+        '.get_started_disclaimer': 'enrollment_section',
+        '.explore-btn': 'program_sections',
+        '.enrollment': 'enrollment_section',
+        '.footer_enrollment': 'enrollment_section',
+        '.video': 'about_section',
+        '.programs': 'program_sections',
+        '.footer_programs': 'program_sections',
+        '.footer_about': 'about_section',
+        '.contact': 'contact_section',
+        '.footer_home': 'hero_section'
+    };
+
+    Object.entries(btnMap).forEach(([selector, targetId]) => {
+        const el = document.querySelector(selector);
+        if (el) {
+            el.addEventListener('click', (e) => {
+                e.preventDefault(); // prevent default anchor behavior
+                scrollTo(targetId);
+            });
+        }
+    });
+}
