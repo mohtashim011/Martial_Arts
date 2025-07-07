@@ -1,146 +1,135 @@
-// Function to check if device is mobile
+// Check if device is mobile
 function isMobileDevice() {
-    return window.innerWidth <= 1100 || (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    return window.innerWidth <= 1100 || typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
 }
 
-// Scroll to target section smoothly
-function scrollToSection(id) {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+// Animate content on scroll using IntersectionObserver
+function animateContentOnScroll() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const animatedDiv = entry.target.querySelector('.animated > div');
+            if (!animatedDiv) return;
+
+            if (entry.isIntersecting) {
+                animatedDiv.style.transition = 'transform 1s ease, opacity 1s ease';
+                animatedDiv.style.transform = 'translateY(0)';
+                animatedDiv.style.opacity = '1';
+            } else {
+                animatedDiv.style.transition = 'none';
+                animatedDiv.style.transform = 'translateY(50px)';
+                animatedDiv.style.opacity = '0';
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    document.querySelectorAll('.swiper-slide').forEach(section => {
+        observer.observe(section);
+    });
 }
 
-// Handle click buttons
-const handleClick = () => scrollToSection('enrollment_section');
+// Scroll to section on button click (no smooth scroll)
+function setupScrollButtons() {
+    const scrollTo = (id) => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView(); // Removed smooth scroll
+    };
 
-['.get_started', '.get_started_programs', '.get_started_disclaimer'].forEach(selector => {
-    const btn = document.querySelector(selector);
-    if (btn) btn.addEventListener('click', handleClick);
-});
+    const btnMap = {
+        '.get_started': 'enrollment_section',
+        '.get_started_programs': 'enrollment_section',
+        '.get_started_disclaimer': 'enrollment_section',
+        '.explore-btn': 'program_sections',
+        '.enrollment': 'enrollment_section',
+        '.footer_enrollment': 'enrollment_section',
+        '.video': 'about_section',
+        '.programs': 'program_sections',
+        '.footer_programs': 'program_sections',
+        '.footer_about': 'about_section',
+        '.contact': 'contact_section',
+        '.footer_home': 'hero_section'
+    };
 
-// Buttons for section scroll
-const sectionScrollMap = {
-    '.explore-btn': 'program_sections',
-    '.video': 'video_section',
-    '.programs': 'program_sections',
-    '.enrollment': 'enrollment_section',
-    '.contact': 'contact_section',
-    '.footer_home': 'hero_section',
-    '.footer_about': 'about_section',
-    '.footer_programs': 'program_sections',
-    '.footer_enrollment': 'enrollment_section'
-};
+    Object.entries(btnMap).forEach(([selector, targetId]) => {
+        const el = document.querySelector(selector);
+        if (el) el.addEventListener('click', () => scrollTo(targetId));
+    });
+}
 
-for (const [btnSelector, targetId] of Object.entries(sectionScrollMap)) {
-    const btn = document.querySelector(btnSelector);
-    if (btn) {
-        btn.addEventListener('click', () => scrollToSection(targetId));
+// Mobile menu toggle
+function setupMobileMenu() {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.mobile-nav');
+    const close = document.querySelector('.close-menu');
+
+    if (!toggle || !nav || !close) return;
+
+    const navLinks = nav.querySelectorAll('.nav-link');
+
+    function openMenu() {
+        nav.classList.add('active');
+        toggle.classList.add('menu-open');
+        toggle.innerHTML = '×';
     }
-}
 
-// Animate content on scroll into view
-const animatedDivs = document.querySelectorAll('.swiper-slide .animated > div');
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.transition = 'transform 1s ease, opacity 1s ease';
-            entry.target.style.transform = 'translateY(0)';
-            entry.target.style.opacity = '1';
-        } else {
-            entry.target.style.transition = 'none';
-            entry.target.style.transform = 'translateY(50px)';
-            entry.target.style.opacity = '0';
+    function closeMenu() {
+        nav.classList.remove('active');
+        toggle.classList.remove('menu-open');
+        toggle.innerHTML = '☰';
+    }
+
+    toggle.addEventListener('click', () => {
+        if (nav.classList.contains('active')) closeMenu();
+        else openMenu();
+    });
+
+    close.addEventListener('click', closeMenu);
+
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+            closeMenu();
         }
     });
-}, {
-    threshold: 0.1
-});
 
-animatedDivs.forEach(el => observer.observe(el));
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+}
 
-// Background image randomizer for hero section
-window.addEventListener('DOMContentLoaded', () => {
+// Background image randomizer
+function setupRandomBackground() {
     const backgroundSlider = document.querySelector('.background-slider');
     if (!backgroundSlider) return;
 
-    const imagePaths = [
+    const images = [
         './assets/images/20250619_011059.png',
         './assets/images/hero_image_3.png',
         './assets/images/hero_image_4.png',
         './assets/images/hero_image_5.png'
     ];
-
-    const randomIndex = Math.floor(Math.random() * imagePaths.length);
+    const selected = images[Math.floor(Math.random() * images.length)];
     const bgSlide = backgroundSlider.querySelector('.bg-slide');
     if (bgSlide) {
-        bgSlide.style.backgroundImage = `url('${imagePaths[randomIndex]}')`;
+        bgSlide.style.backgroundImage = `url('${selected}')`;
     }
-});
-
-// Mobile menu toggle
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const mobileNav = document.querySelector('.mobile-nav');
-const closeMenu = document.querySelector('.close-menu');
-
-if (mobileMenuToggle && mobileNav && closeMenu) {
-    let isMenuOpen = false;
-
-    function openMenu() {
-        isMenuOpen = true;
-        mobileNav.classList.add('active');
-        mobileMenuToggle.innerHTML = '×';
-        mobileMenuToggle.classList.add('menu-open');
-        closeMenu.style.display = 'none';
-    }
-
-    function closeMenuFunc() {
-        isMenuOpen = false;
-        mobileNav.classList.remove('active');
-        mobileMenuToggle.innerHTML = '☰';
-        mobileMenuToggle.classList.remove('menu-open');
-        closeMenu.style.display = 'block';
-    }
-
-    mobileMenuToggle.addEventListener('click', () => {
-        isMenuOpen ? closeMenuFunc() : openMenu();
-    });
-
-    closeMenu.addEventListener('click', closeMenuFunc);
-
-    document.addEventListener('click', function(event) {
-        const isClickInside = mobileNav.contains(event.target) || mobileMenuToggle.contains(event.target);
-        if (!isClickInside && isMenuOpen) closeMenuFunc();
-    });
-
-    const navLinks = mobileNav.querySelectorAll('.nav-link');
-    navLinks.forEach(link => link.addEventListener('click', closeMenuFunc));
 }
 
-// CSS injection for transitions
-const style = document.createElement('style');
-style.textContent = `
-    html {
-        scroll-behavior: smooth;
-    }
-    .mobile-menu-toggle {
-        transition: transform 0.3s ease;
-        font-size: 24px;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-    .mobile-menu-toggle.menu-open {
-        transform: rotate(180deg);
-    }
-    .mobile-nav {
-        transition: all 0.3s ease;
-        transform: translateX(-100%);
-        opacity: 0;
-        visibility: hidden;
-    }
-    .mobile-nav.active {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
-`;
-document.head.appendChild(style);
+// Add CSS dynamically for animated content
+function injectScrollAnimationCSS() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .animated > div {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', () => {
+    setupScrollButtons();
+    setupMobileMenu();
+    setupRandomBackground();
+    animateContentOnScroll();
+    injectScrollAnimationCSS();
+});
