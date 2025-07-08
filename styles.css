@@ -1724,6 +1724,7 @@ nav a.active {
     position: relative;
     border: 2px solid #404040;
     transition: all 0.3s;
+    margin-bottom: 10px;
 }
 
 .popup_checkbox:checked {
