@@ -49,21 +49,11 @@ header {
 .header-wrapper {
     background-color: #ffff;
     width: 100%;
-    z-index: 100000;
+    z-index: 100000000 !important;
     position: sticky; /* Default position */
 }
 
-/* Styles for desktops and larger screens */
-@media (min-width: 992px) {
-    .header-wrapper {
-        position: static; /* Makes the header sticky on desktop */
-        top: 0; /* Distance from the top of the viewport */
-        z-index: 1000000 !important;
-    }
-}
-.popup-box{
-z-index: 10001;
-}
+
 .desktop-nav{
 
     display: flex;
@@ -73,7 +63,7 @@ z-index: 10001;
     width: 100%;
     background-color: #ffffff;
     padding: 5px 0px 0px 0px;
-    z-index:100000;
+    z-index:100000000;
 
 }
 .hero{
