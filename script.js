@@ -453,7 +453,6 @@ if (exploreBtn) {
         });
     }
 });
-
 function openPopup(index) {
     const popupContent = document.getElementById('popupContent');
     const popupOverlay = document.getElementById('popupOverlay');
@@ -461,58 +460,54 @@ function openPopup(index) {
     switch (index) {
         case 1:
             popupContent.innerHTML = `
-            <form id="class-registration-form">
-            <h1 class="popup_header">JOIN OUR CLASSES</h1>
+                <form id="class-registration-form">
+                    <h1 class="popup_header">JOIN OUR CLASSES</h1>
+
                     <div class="form-group">
                         <label for="full-name">Full Name *</label>
                         <input type="text" id="full-name" placeholder="Full Name" name="full-name" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email *</label>
                         <input type="email" id="email" placeholder="Email" name="email" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="phone">Phone *</label>
                         <input type="tel" id="phone" placeholder="Phone Number" name="phone" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Are you asthmatic?</label>
-                        <div>
-                            <div class="checkbox-group">
-                                <input class="popup_checkbox" type="checkbox" id="asthmatic-yes" name="asthmatic" value="yes">
-                                <label for="asthmatic-yes">Yes</label>
-                            </div>
-                            <div class="checkbox-group">
-                                <input class="popup_checkbox" type="checkbox" id="asthmatic-no" name="asthmatic" value="no">
-                                <label for="asthmatic-no">No</label>
-                            </div>
+                        <div class="checkbox-group">
+                            <input class="popup_checkbox" type="checkbox" id="asthmatic-yes" name="asthmatic" value="yes">
+                            <label for="asthmatic-yes">Yes</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input class="popup_checkbox" type="checkbox" id="asthmatic-no" name="asthmatic" value="no">
+                            <label for="asthmatic-no">No</label>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Do you have any physical injury we should be mindful of?</label>
-                        <div>
-                            <div class="checkbox-group">
-                                <input class="popup_checkbox" type="checkbox" id="injury-yes" name="injury" value="yes">
-                                <label for="injury-yes">Yes</label>
-                            </div>
-                            <div class="checkbox-group">
-                                <input class="popup_checkbox" type="checkbox" id="injury-no" name="injury" value="no">
-                                <label for="injury-no">No</label>
-                            </div>
+                        <div class="checkbox-group">
+                            <input class="popup_checkbox" type="checkbox" id="injury-yes" name="injury" value="yes">
+                            <label for="injury-yes">Yes</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input class="popup_checkbox" type="checkbox" id="injury-no" name="injury" value="no">
+                            <label for="injury-no">No</label>
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="submit-btn">SUBMIT & BOOK YOUR GRILL</button>
-                    
+
                     <p class="disclaimer">"By submitting this form, you acknowledge and accept the risks associated with martial training. The instructor and the foundation are not liable for any injuries sustained during practice. We do not share your information with third parties."</p>
                 </form>
             `;
 
-            // Call the checkbox function AFTER setting innerHTML
             handleCheckboxGroup('asthmatic-yes', 'asthmatic-no');
             handleCheckboxGroup('injury-yes', 'injury-no');
             break;
@@ -527,30 +522,29 @@ function openPopup(index) {
     }
 
     popupOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Disable background scroll
 
-    // Define the handleCheckboxGroup function outside the switch statement
-    function handleCheckboxGroup(group1Id, group2Id) {
-        const checkbox1 = document.getElementById(group1Id);
-        const checkbox2 = document.getElementById(group2Id);
+    // Function to make checkboxes mutually exclusive
+    function handleCheckboxGroup(id1, id2) {
+        const checkbox1 = document.getElementById(id1);
+        const checkbox2 = document.getElementById(id2);
 
         if (checkbox1 && checkbox2) {
-            checkbox1.addEventListener('change', function () {
-                if (this.checked) {
-                    checkbox2.checked = false;
-                }
+            checkbox1.addEventListener('change', () => {
+                if (checkbox1.checked) checkbox2.checked = false;
             });
 
-            checkbox2.addEventListener('change', function () {
-                if (this.checked) {
-                    checkbox1.checked = false;
-                }
+            checkbox2.addEventListener('change', () => {
+                if (checkbox2.checked) checkbox1.checked = false;
             });
         }
     }
 }
 
 function closePopup() {
-    document.getElementById('popupOverlay').style.display = 'none';
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'none';
+    document.body.style.overflow = ''; // Re-enable background scroll
 }
 
 document.addEventListener('DOMContentLoaded', function () {

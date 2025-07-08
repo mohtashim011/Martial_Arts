@@ -218,9 +218,17 @@ input[type="submit"] {
     font-family: 'Libre Caslon Text', 'sans-serif';
     border-radius: 0px;
     margin-top: 1.3em;
+    text-transform: uppercase;
     padding: 0.8rem 1.5rem !important;
 }
+input[type="text" ],[type="email" ],[type="submit"]{
 
+    border: 1px solid #252525;
+}
+textarea{
+
+    border: 1px solid #252525;
+}
 .form-con {
     width: 800px;
     margin: 5em auto;
@@ -235,23 +243,40 @@ form {
     overflow: hidden;
 }
 
+input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
 
+textarea:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* Enroll Form */
+
+.popup-overlay{
+    padding-bottom: 0px;
+}
+#class-registration-form{
+    padding-bottom: 40px;
+}
 input,
 textarea {
     width: 100%;
     padding: 9px 20px;
-    border: 0.5px solid #333;
+    /* border: 0.5px solid #333; */
     background-color: #12121257;
     color: #ffffff;
-    caret-color: #829ab1;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-size: 1rem;
     line-height: 2rem;
     border-radius: 0px;
     line-height: 2rem;
      font-family: 'Libre Caslon Text', 'sans-serif';
 }
-#contact{
+#contact-us{
     padding-bottom: 120px;
 }
 /* Mobile nav (hidden by default) */
@@ -582,7 +607,7 @@ nav a.active {
         margin: 0 0.5rem;
     }
     .programs-button{
-    width: 45%;
+    width: 50%;
 }
 
 }
@@ -1252,6 +1277,9 @@ nav a.active {
     display: none;
     align-items: center;
     justify-content: center;
+    z-index: 10000;
+    margin-top: 130px;
+    
 }
 
 .popup-box {
@@ -1265,6 +1293,7 @@ nav a.active {
     position: relative;
     overflow-y: auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding-bottom: 150px;
 }
 
 .close-btn {
@@ -1349,7 +1378,7 @@ nav a.active {
 }
 
 .footer-container {
-    padding: 50px 0;
+        padding: 50px 0px 100px 0px;
     max-width: 1280px;
     margin: 0 auto;
     display: grid;
@@ -1453,7 +1482,7 @@ nav a.active {
 }
 
 .footer-bottom-content {
-    padding: 25px 0;
+    padding: 20px 0;
     max-width: 1280px;
     margin: 0 auto;
     display: flex;
@@ -1510,10 +1539,14 @@ nav a.active {
     .footer-left {
         padding-right: 0;
     }
+/* .footer-container {
+    padding: 50px 20px 50px 20px;
+
+} */
 
     .footer-description {
         max-width: 100%;
-        font-size: 11px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
 
@@ -1532,6 +1565,17 @@ nav a.active {
         padding: 12px 25px;
         font-size: 11px;
     }
+
+    .popup-overlay {
+    margin-top: 130px;
+    
+}
+
+.popup-box {
+
+    padding-bottom: 150px;
+}
+
 }
 
 .footer-container-image {
@@ -1596,12 +1640,19 @@ nav a.active {
 .mobile-scroll-slide {
     height: auto !important;
     scroll-snap-align: start;
+    padding-bottom: 80px;
 }
 
 /* Disable Swiper transitions on mobile */
 @media (max-width: 1100px) {
     .swiper-slide {
         transition: none !important;
+    }
+    .mobile-scroll-slide {
+    padding-bottom: 40px;
+}
+    #contact-us{
+        padding-bottom: 80px;
     }
 }
 
@@ -1841,7 +1892,6 @@ nav a.active {
     .popup-box {
         max-width: 450px;
         padding: 25px;
-        margin-top: 200px;
         z-index: 100001;
     }
 }
@@ -1928,7 +1978,7 @@ nav a.active {
     }
 
     .footer_links{
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .contact-email{
@@ -2032,7 +2082,7 @@ nav a.active {
     }
 
     .mb_15_mobile {
-        margin-bottom: 15px;
+        margin-bottom: 16px;
     }
 
     .logos-section {
@@ -2062,7 +2112,7 @@ nav a.active {
 
       .enroll-btn{
         margin-top: 10px;
-        font-size: 11px;
+        font-size: 12px;
         /* border-radius: 4px; */
         padding: 0.8rem 1.5rem !important;
       }
@@ -2081,7 +2131,7 @@ nav a.active {
 
     .programs-text{
         width: 100%;
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .philosophy-button img {
@@ -2102,7 +2152,7 @@ nav a.active {
         top: 0;
     }
     .custom-arrow-list li{
-        font-size: 11px;
+        font-size: 14px;
     }
     .footer_links_mobile{
         display: block !important;
@@ -2115,7 +2165,7 @@ nav a.active {
     .contact-section {
         text-align: left;
         height: 140px;
-        margin: 0 0 75px 0;
+        margin: 0 0 55px 0;
     }
 
     .disclaimer_watermark{
@@ -2146,12 +2196,12 @@ nav a.active {
         /* Full width on mobile */
     }
     .philosophy-text{
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .explore-btn, .philosophy-button, .programs-button{
         padding: 8px 10px;
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .content-title{
@@ -2159,11 +2209,11 @@ nav a.active {
     }
 
     .subheading{
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .enroll-item p{
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .popup-overlay {
@@ -2218,7 +2268,7 @@ nav a.active {
     cursor: pointer;
     align-self: flex-start;
     transition: 0.3s;
-    font-size: 1rem;
+    font-size: 14px;
     font-family: 'Libre Caslon Text', sans-serif;
     /* border-radius: 5px; */
 }
