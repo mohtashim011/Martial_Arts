@@ -221,6 +221,9 @@ input[type="submit"] {
     text-transform: uppercase;
     padding: 0.8rem 1.5rem !important;
 }
+.submit-btn:hover {
+    background-color: #c0392b;
+}
 input[type="text" ],[type="email" ],[type="submit"]{
 
     border: 1px solid #252525;
