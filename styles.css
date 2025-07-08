@@ -2240,6 +2240,7 @@ nav a.active {
 
     .popup_header {
         margin: 0;
+        margin-bottom: 15px;
     }
 
     .form-group {
