@@ -204,7 +204,7 @@ li {
     /* font-size: 12px; */
     font-size: 1rem;
     font-family: 'Libre Caslon Text', 'sans-serif';
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     display: flex;
     text-align: left;
 }
