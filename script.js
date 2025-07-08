@@ -119,8 +119,6 @@ function animateContentOnSlideChange(currentIndex, previousIndex, isInit = false
         content.style.transition = 'none';
     }, 2000);
 }
-
-// Initialize background sliders for all sections
 function initBackgroundSliders() {
     const sliders = document.querySelectorAll('.background-slider');
 
@@ -128,24 +126,36 @@ function initBackgroundSliders() {
         const slides = slider.querySelectorAll('.bg-slide');
         let currentSlide = 0;
 
-        // Set initial positions for slides
+        // Set initial positions and add transition effect
         slides.forEach((slide, index) => {
             slide.style.transform = `translateY(${index * 100}%)`;
+            slide.style.transition = 'transform 1s ease-in-out';
         });
 
         // If this is the hero section, add arrow functionality
-        if (slider.closest('.hero-section')) {
-            const arrow = document.getElementById('scrollArrow');
-            if (arrow) {
-                arrow.addEventListener('click', () => {
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    slider.style.transform = `translateY(-${currentSlide * 100}%)`;
-                });
-            }
-        }
+        // if (slider.closest('.hero-section')) {
+        //     const arrow = document.getElementById('scrollArrow');
+
+        //     if (arrow) {
+        //         arrow.addEventListener('click', () => {
+        //             // ✅ OPTION 1: Background Slide Transition
+        //             // currentSlide = (currentSlide + 1) % slides.length;
+        //             // slides.forEach((slide, index) => {
+        //             //     slide.style.transform = `translateY(${(index - currentSlide) * 100}%)`;
+        //             // });
+
+        //             // ✅ OPTION 2: Scroll to next section (uncomment if you prefer scroll behavior)
+                    
+        //             const nextSection = document.querySelector('.hero-section + section');
+        //             if (nextSection) {
+        //                 nextSection.scrollIntoView({ behavior: 'smooth' });
+        //             }
+                    
+        //         });
+        //     }
+        // }
     });
 }
-
 // Initialize all background sliders when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
     initBackgroundSliders()
@@ -543,66 +553,53 @@ function closePopup() {
     document.getElementById('popupOverlay').style.display = 'none';
 }
 
-// Mobile menu toggle functionality
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const mobileNav = document.querySelector('.mobile-nav');
-const closeMenu = document.querySelector('.close-menu');
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
 
-if (mobileMenuToggle && mobileNav && closeMenu) {
     let isMenuOpen = false;
 
-    // Function to open menu
     function openMenu() {
         isMenuOpen = true;
-        mobileNav.classList.add('active'); // Add active class to show mobile nav
-        mobileMenuToggle.innerHTML = '×'; // Change bar icon to X icon
-        mobileMenuToggle.classList.add('menu-open'); // Optional: add class for styling
-        // Hide the close button since we're using the toggle button now
-        closeMenu.style.display = 'none';
+        mobileNav.classList.add('active');
+        mobileMenuToggle.innerHTML = 'x';
+        mobileMenuToggle.classList.add('menu-open');
+        mobileMenuToggle.style.color = 'white'; // Make "X" white
     }
 
-    // Function to close menu
-    function closeMenuFunc() {
+    function closeMenu() {
         isMenuOpen = false;
-        mobileNav.classList.remove('active'); // Remove active class to hide mobile nav
-        mobileMenuToggle.innerHTML = '☰'; // Change X icon back to bar icon
-        mobileMenuToggle.classList.remove('menu-open'); // Optional: remove class
-        // Show the close button back (if you want to keep both options)
-        closeMenu.style.display = 'block';
+        mobileNav.classList.remove('active');
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.classList.remove('menu-open');
+        mobileMenuToggle.style.color = 'black'; // Make "☰" black
     }
 
-    // Toggle menu when clicking the main toggle button
-    mobileMenuToggle.addEventListener('click', function() {
-        if (isMenuOpen) {
-            closeMenuFunc();
-        } else {
-            openMenu();
-        }
-    });
-
-    // Close menu when clicking the close button (×)
-    closeMenu.addEventListener('click', function() {
-        closeMenuFunc();
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = mobileNav.contains(event.target);
-        const isClickOnToggle = mobileMenuToggle.contains(event.target);
-        
-        if (!isClickInsideMenu && !isClickOnToggle && isMenuOpen) {
-            closeMenuFunc();
-        }
-    });
-
-    // Close menu when clicking on nav links
-    const navLinks = mobileNav.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            closeMenuFunc();
+    if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener('click', function () {
+            if (isMenuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
-    });
-}
+
+        // Optional: Close on nav link click
+        const navLinks = mobileNav.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Optional: Click outside to close
+        document.addEventListener('click', function (event) {
+            const isClickInside = mobileNav.contains(event.target) || mobileMenuToggle.contains(event.target);
+            if (!isClickInside && isMenuOpen) {
+                closeMenu();
+            }
+        });
+    }
+});
+
 
 // Optional: Add CSS for smooth transitions
 const style = document.createElement('style');
@@ -659,15 +656,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-const menuToggle = document.querySelector('.mobile-menu-toggle');
-const logo = document.querySelector('.logo_1');
 
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('menu-open');
+// contact button to contact from
 
-  if (menuToggle.classList.contains('menu-open')) {
-    logo.classList.add('logo-hid');
-  } else {
-    logo.classList.remove('logo-hid');
+document.addEventListener('DOMContentLoaded', function () {
+  const contactButton = document.querySelector('.nav-link.contact');
+  const targetSection = document.getElementById('contact-us');
+
+  if (contactButton && targetSection) {
+    contactButton.addEventListener('click', function () {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
   }
 });

@@ -18,28 +18,34 @@
 </head>
 
 <body>
-    <div class="header-wrapper">     <header class="header-main">
-         <img src="./assets/images/logo.png" alt="Logo" class="logo_1 logo-hid" />
-                                <!-- <img src="./assets/images/Frame 246.svg" alt="Logo" class="logo_1" /> -->
-                                <button class="mobile-menu-toggle">☰</button>
-                                <nav class="desktop-nav">
-                                    <div class="head-left">
-                                    <button class="nav-link video">About</button>
-                                    <button class="nav-link programs">Programs</button></div>
-                                    <img src="./assets/images/logo.png" alt="Logo" class="logo_1" />
-                                    <div class="head-right">
-                                    <button class="nav-link enrollment">Enrollment</button>
-                                    <button class="nav-link contact">Contact</button></div>
-                                </nav>
-                                <div class="mobile-nav">
+    <div class="header-wrapper">     
+    <header class="header-main">
+        <a href="/">
+        <img src="./assets/images/logo.png" alt="Logo" class="logo_1 logo-hid" /></a>
+                                
+        <button class="mobile-menu-toggle">☰</button>
+        <nav class="desktop-nav">
+            <div class="head-left">
+            <button class="nav-link video">About</button>
+            <button class="nav-link programs">Programs</button></div>
+            <a href="/">
+            <img src="./assets/images/logo.png" alt="Logo" class="logo_1" />
+            </a>
+
+            <div class="head-right">
+            <button class="nav-link enrollment">Enroll</button>
+            <button class="nav-link contact">Contact</button></div>
+        </nav>
+        <div class="mobile-nav">
                                    
-                                    <button class="close-menu" style="color: white;">×</button>
-                                    <a href="#philosophy_section" class="nav-link video">About</a>
-                                    <a href="#program_sections" class="nav-link programs">Programs</a>
-                                    <a href="#enrollment_section" class="nav-link enrollment">Enroll</a>
-                                    <a href="#contact_section" class="nav-link contact">Contact</a>
-                                </div>
-                            </header>
+            <!--     -->
+                <a href="#philosophy_section" class="nav-link video">About</a>
+                <a href="#program_sections" class="nav-link programs">Programs</a>
+                <a href="#enrollment_section" class="nav-link enrollment">Enroll</a>
+                <a href="#contact-us" class="nav-link contact">Contact</a>
+
+        </div>
+</header>
 </div>
 
     <div class="swiper mySwiper">
@@ -72,8 +78,10 @@
                                     </div></button>
                             </div>
                         </div>
-                        <div class="scroll-arrow text-center" id="scrollArrow"><img src="./assets/images/Union (3).svg"
-                                width="100%"></div>
+                        <a href="#video_section" class="scroll-arrow text-center" id="scrollArrow">
+    <img src="./assets/images/Union (3).svg" width="100%" alt="Scroll Arrow">
+</a>
+
                     </div>
                 </section>
             </div>
@@ -297,7 +305,34 @@
                     <!-- </div> -->
                 </section>
             </div>
-
+            <section id="contact-us">
+                <h2 class="video-title">CONTACT <span class="highlight">NOW</span></h2>
+                <div class="underline"></div>
+                <div>
+                    
+                    <div class="container form-con">
+                    <form>
+                        <ul>
+                            <li>
+                                <label for="name"><span class="contact-span">Name </span></label>
+                                <input type="text" id="name" name="user_name">
+                            </li>
+                            <li>
+                                <label for="mail"><span class="contact-span">Email </span></label>
+                                <input type="email" id="mail" name="user_email">
+                            </li>
+                            <li>
+                                <label for="msg"><span class="contact-span">Message</span></label>
+                                <textarea rows="4" cols="50"></textarea>
+                            </li>
+                            <li>
+                                <input type="submit">
+                            </li>
+                        </ul>
+                    </form>
+                    </div>
+                </div>
+            </section>
             <div class="swiper-slide">
                 <section class="footer-section footer-container-image" id="contact_section">
                     <div class="overflow_hidden">

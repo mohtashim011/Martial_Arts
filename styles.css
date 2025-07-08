@@ -5,6 +5,7 @@
     user-select: text !important;
     -webkit-user-select: text !important;
     -ms-user-select: text !important;
+    letter-spacing: 01px  !important;
     /* width: 1320px; */
 }
 
@@ -15,6 +16,11 @@ html, body {
     overflow: hidden;
     height: 100%;
     pointer-events: auto !important;
+    
+}
+html {
+  scroll-behavior: smooth;
+  
 }
 
 header {
@@ -42,7 +48,7 @@ header {
 
 .header-wrapper{
     background-color: #ffff;
-    position: relative;
+    position: sticky;
     width: 100%;
     z-index: 1000000  !important;
 }
@@ -54,7 +60,7 @@ header {
     align-items: center;
     width: 100%;
     background-color: #ffffff;
-    padding: 10px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
     z-index:100000;
 
 }
@@ -112,18 +118,138 @@ nav{
 .footer_links:hover{
     color: #000;
 }
-
+/* body .menu-open .mobile-menu-toggle {
+  color: white;
+}
+.header-wrapper.menu-open .mobile-menu-toggle {
+  color: white !important;
+}
+/* × close button is always white */
+/* .close-menu,
+.menux {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+} */
 /* Mobile menu toggle button (hidden by default) */
-.mobile-menu-toggle {
+/* .mobile-menu-toggle {
     display: none;
     background: none;
     border: none;
     color: rgb(0, 0, 0);
     font-size: 1.8rem;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1001; } */
+/* ☰ default black */
+.mobile-menu-toggle {
+  display: none;
+  color: black;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
 }
 
+/* ☰ becomes white when menu is open */
+body.menu-open .mobile-menu-toggle {
+  color: white;
+}
+
+/* × always white */
+.close-menu,
+.menux {
+  color: white;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Show toggle on mobile */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+/* Contact form */
+
+
+
+label,
+input,
+textarea {
+    display: block;
+    width: 100%;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0.3em;
+}
+.contact-span {
+    font-weight: 100;
+    color: #ffffff;
+    line-height: 35px;
+    line-height: 2.5rem;
+    /* font-size: 12px; */
+    font-size: 1rem;
+    font-family: 'Libre Caslon Text', 'sans-serif';
+    text-transform: uppercase;
+    display: flex;
+    text-align: left;
+}
+input[type="submit"] {
+    background: red;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Libre Caslon Text', 'sans-serif';
+    border-radius: 0px;
+    margin-top: 1.3em;
+    padding: 0.8rem 1.5rem !important;
+}
+
+.form-con {
+    width: 800px;
+    margin: 5em auto;
+}
+form {
+    background-color: #121212;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+
+input,
+textarea {
+    width: 100%;
+    padding: 9px 20px;
+    border: 0.5px solid #333;
+    background-color: #12121257;
+    color: #ffffff;
+    caret-color: #829ab1;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 2rem;
+    border-radius: 0px;
+    line-height: 2rem;
+     font-family: 'Libre Caslon Text', 'sans-serif';
+}
+#contact{
+    padding-bottom: 120px;
+}
 /* Mobile nav (hidden by default) */
 .mobile-nav {
     display: none;
@@ -363,18 +489,21 @@ nav a.active {
     align-items: center;
     gap: 10px;
     margin-left: 35px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.5rem !important;
     background-color: red;
     color: white;
     border: none;
     font-weight: bold;
+    font-family: 'Libre Caslon Text', sans-serif;
     cursor: pointer;
     align-self: flex-start;
     transition: 0.3s;
     font-size: 1rem;
     /* border-radius: 5px; */
     border: 2px solid transparent;
+    
 }
+
 
 .philosophy-button {
     margin-top: 4.5rem;
@@ -447,7 +576,13 @@ nav a.active {
     nav a {
         margin: 0 0.5rem;
     }
+    .programs-button{
+    width: 45%;
 }
+
+}
+
+
 
 /* /////////////////////////////////////////////// */
 
@@ -572,6 +707,8 @@ nav a.active {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Libre Caslon Text', sans-serif;
     margin-bottom: 1rem;
+    /* display: flex; */
+    text-align: center;
 }
 
 .highlight {
@@ -688,7 +825,7 @@ nav a.active {
 .custom-video {
  
   height: auto;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   object-fit: cover;
 }
 
@@ -696,6 +833,9 @@ nav a.active {
 .cusom-marg{
         margin-top: -268px !important;
     }
+    #contact{
+    padding-bottom: 60px;
+}
 }
 
 /* Desktop styles (min-width 768px and up) */
@@ -880,7 +1020,7 @@ nav a.active {
     color: #ffffff;
     margin-bottom: 80px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
     border: 3px solid transparent;
     border-left: 7px solid red;
 }
@@ -892,7 +1032,7 @@ nav a.active {
     font-weight: 700;
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
     border: 3px solid transparent;
     border-left: 7px solid red;
 }
@@ -915,7 +1055,7 @@ nav a.active {
 
 .philosophy-image {
     flex: 1;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     background-position: center;
@@ -926,7 +1066,7 @@ nav a.active {
 .philosophy-image-1,
 .philosophy-image-2 {
     flex: 1;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     background-position: center;
@@ -1034,7 +1174,7 @@ nav a.active {
 .card {
     background-color: #121212;
     padding: 40px;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     text-align: left;
     width: 800px;
     margin: auto;
@@ -1267,7 +1407,7 @@ nav a.active {
     text-transform: uppercase;
     margin-bottom: 25px;
     color: #000;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
 }
 
 .footer-links, .footer_links_mobile {
@@ -1352,7 +1492,13 @@ nav a.active {
   opacity: 1;
 }
 
-
+.close-menu {
+  background: none;
+  border: none;
+  color: white !important; /* White × */
+  font-size: 30px;
+  cursor: pointer;
+}
     .enroll-item {
         gap:10px !important;
 }
@@ -1910,7 +2056,7 @@ nav a.active {
         margin-top: 10px;
         font-size: 11px;
         /* border-radius: 4px; */
-        padding: 5px 20px;
+        padding: 0.8rem 1.5rem !important;
       }
     
       .logo{
@@ -2056,7 +2202,7 @@ nav a.active {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.5rem !important;
     background-color: red;
     color: white;
     border: 2px solid red;
@@ -2065,6 +2211,7 @@ nav a.active {
     align-self: flex-start;
     transition: 0.3s;
     font-size: 1rem;
+    font-family: 'Libre Caslon Text', sans-serif;
     /* border-radius: 5px; */
 }
 .unioin_image_white {
