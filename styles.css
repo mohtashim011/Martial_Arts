@@ -1829,6 +1829,7 @@ nav a.active {
     .popup_checkbox {
         height: 16px;
         width: 16px;
+        margin-bottom: 5px;
     }
 }
 
