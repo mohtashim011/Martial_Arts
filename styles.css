@@ -46,11 +46,23 @@ header {
   border-radius: 20px;
 }
 
-.header-wrapper{
+.header-wrapper {
     background-color: #ffff;
-    position: sticky;
     width: 100%;
-    z-index: 1000000  !important;
+    z-index: 100000;
+    position: sticky; /* Default position */
+}
+
+/* Styles for desktops and larger screens */
+@media (min-width: 992px) {
+    .header-wrapper {
+        position: static; /* Makes the header sticky on desktop */
+        top: 0; /* Distance from the top of the viewport */
+        z-index: 1000000 !important;
+    }
+}
+.popup-box{
+z-index: 10001;
 }
 .desktop-nav{
 
@@ -1835,6 +1847,8 @@ nav a.active {
     .popup-box {
         max-width: 450px;
         padding: 25px;
+        margin-top: 200px;
+        z-index: 100001;
     }
 }
 
