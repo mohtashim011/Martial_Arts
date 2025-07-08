@@ -49,7 +49,7 @@ header {
     background-color: #ffff;
     width: 100%;
     z-index: 100000000 !important;
-    position: sticky; /* Default position */
+    position: relative;
     padding: 0px !important;
     margin: 0px !important;
     top: 0;
@@ -610,7 +610,7 @@ nav a.active {
         margin: 0 0.5rem;
     }
     .programs-button{
-    width: 190px;
+    width: 50%;
 }
 
 }
@@ -1281,7 +1281,6 @@ nav a.active {
     align-items: center;
     justify-content: center;
     z-index: 10000;
-    margin-top: 130px;
     
 }
 
@@ -1296,7 +1295,7 @@ nav a.active {
     position: relative;
     overflow-y: auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding-bottom: 150px;
+
 }
 
 .close-btn {
@@ -1569,15 +1568,15 @@ nav a.active {
         font-size: 11px;
     }
 
-    .popup-overlay {
+    /* .popup-overlay {
     margin-top: 130px;
     
-}
+} */
 
-.popup-box {
+/* .popup-box {
 
     padding-bottom: 150px;
-}
+} */
 
 }
 
@@ -1770,8 +1769,8 @@ nav a.active {
 }
 
 .popup_checkbox {
-    height: 18px;
-    width: 18px;
+    height: 20px !important;
+    width: 20px !important;
     background-color: #252525;
     appearance: none;
     -webkit-appearance: none;
@@ -1780,8 +1779,11 @@ nav a.active {
     cursor: pointer;
     position: relative;
     border: 2px solid #404040;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px;
 }
 
 .popup_checkbox:checked {
@@ -1792,12 +1794,13 @@ nav a.active {
 .popup_checkbox:checked::after {
     content: '✓';
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    line-height: 1;
 }
 
 .checkbox-group label {
@@ -1884,10 +1887,10 @@ nav a.active {
         gap: 8px;
     }
 
-    .popup_checkbox {
+    /* .popup_checkbox {
         height: 16px;
         width: 16px;
-    }
+    } */
 }
 
 /* Zoom handling */
