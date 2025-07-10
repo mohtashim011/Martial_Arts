@@ -502,7 +502,7 @@ function openPopup(index) {
                         </div>
                     </div>
 
-                    <button type="submit" class="submit-btn">SUBMIT & BOOK YOUR GRILL</button>
+                    <button type="submit" class="submit-btn">Submit and Check Your Email</button>
 
                     <p class="disclaimer">"By submitting this form, you acknowledge and accept the risks associated with martial training. The instructor and the foundation are not liable for any injuries sustained during practice. We do not share your information with third parties."</p>
                 </form>
