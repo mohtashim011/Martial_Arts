@@ -39,14 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.zoho.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'saifsadi5@gmail.com'; // Your Zoho email
+        $mail->Username   = 'saifsadi@zohomail.com'; // Your Zoho email
         $mail->Password   = 'aDm1n@11533zzd';       // Your Zoho app password (ideally store securely!)
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
 
         // From & To
-        $mail->setFrom('saifsadi5@gmail.com', 'Website Form');
-        $mail->addAddress('saifsadi5@gmail.com');
+        $mail->setFrom('saifsadi@zohomail.com', 'Website Form');
+        $mail->addAddress('saifsadi@zohomail.com');
         $mail->isHTML(true);
 
         // Determine form type: contact or registration
