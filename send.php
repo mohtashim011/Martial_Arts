@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->send();
         $_SESSION['form_success'] = "Thank you! Your message has been successfully sent.";
     } catch (Exception $e) {
-        $_SESSION['form_error'] = "❌ Mailer Error: " . $mail->ErrorInfo;
+        $_SESSION['form_error'] = "There was a problem sending your message: " . $mail->ErrorInfo;
     }
 
     // ✅ STEP 3: Redirect back to the form page

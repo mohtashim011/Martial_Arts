@@ -1215,8 +1215,12 @@ nav a.active {
     width: 800px;
     margin: auto;
 }
-
-.subheading {
+.subheading{
+    display: flex;
+    gap: 15%;
+    align-items: center;
+}
+.subheading1 {
     font-family: 'Libre Caslon Text', sans-serif;
     font-size: 20px;
     font-weight: 100;
@@ -1225,7 +1229,24 @@ nav a.active {
     color: white;
     width: 200px;
 }
-
+.subheading2 {
+    font-family: 'Libre Caslon Text', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
+    width: 200px;
+}
+.subsubheading{
+   font-family: 'Libre Caslon Text', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
+    width: 200px;
+}
 .enroll-item {
     display: flex;
     justify-content: space-between;
@@ -1235,7 +1256,14 @@ nav a.active {
     gap: 100px;
     width: 100%;
 }
-
+.enroll-subitem{
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+}
+.enroll-sub{
+    width: 100%;
+}
 .enroll-item h3 {
     margin: 0;
     font-size: 18px;
@@ -2217,10 +2245,18 @@ nav a.active {
         font-size: 20px;
     }
 
-    .subheading{
+    .subheading1{
         font-size: 20px;
     }
-
+     .subheading2{
+        font-size: 20px;
+    }
+    .enroll-subitem {
+    gap: 3%;
+    }
+    .subheading {
+    gap: 12%;
+    }
     .enroll-item p{
         font-size: 14px;
     }
