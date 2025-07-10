@@ -1897,7 +1897,7 @@ nav a.active {
 @media (min-resolution: 150dpi) {
     .popup-box {
         max-width: 450px;
-        padding: 25px;
+        padding: 40px 25px 40px 25px;
         z-index: 100001;
     }
 }
