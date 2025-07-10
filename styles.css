@@ -19,7 +19,6 @@ html, body {
 }
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   
 }
 
@@ -2254,9 +2253,11 @@ nav a.active {
     }
     .enroll-subitem {
     gap: 2%;
+    display: contents;
     }
     .subheading {
     gap: 12%;
+    display: contents;
     }
     .enroll-item p{
         font-size: 14px;
