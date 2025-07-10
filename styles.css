@@ -206,7 +206,7 @@ li {
     /* font-size: 12px; */
     font-size: 1rem;
     font-family: 'Libre Caslon Text', 'sans-serif';
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     display: flex;
     text-align: left;
 }
@@ -218,7 +218,7 @@ input[type="submit"] {
     font-family: 'Libre Caslon Text', 'sans-serif';
     border-radius: 0px;
     margin-top: 1.3em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding: 0.8rem 1.5rem !important;
 }
 .submit-btn:hover {
