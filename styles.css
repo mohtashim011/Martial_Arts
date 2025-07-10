@@ -1259,7 +1259,7 @@ nav a.active {
 .enroll-subitem{
     display: flex;
     flex-direction: row;
-    gap: 30%;
+    gap: 31%;
 }
 .enroll-sub{
     width: 100%;
