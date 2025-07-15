@@ -1262,6 +1262,7 @@ nav a.active {
     flex-direction: row;
     justify-content: space-between;
     gap: 18%;
+    width: 56%;
 }
 .enroll-sub{
     width: 100%;
