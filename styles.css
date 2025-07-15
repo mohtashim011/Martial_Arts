@@ -1228,7 +1228,7 @@ nav a.active {
     text-transform: uppercase;
     margin-bottom: 10px;
     color: white;
-    width: 200px;
+    
 }
 .subheading2 {
     font-family: 'Libre Caslon Text', sans-serif;
@@ -1237,7 +1237,7 @@ nav a.active {
     text-transform: uppercase;
     margin-bottom: 10px;
     color: white;
-    width: 200px;
+    
 }
 .subsubheading{
    font-family: 'Libre Caslon Text', sans-serif;
@@ -1246,7 +1246,7 @@ nav a.active {
     text-transform: uppercase;
     margin-bottom: 10px;
     color: white;
-    width: 200px;
+    
 }
 .enroll-item {
     display: flex;
