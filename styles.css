@@ -103,6 +103,7 @@ nav{
 
 .contact{
     border-color: rgba(0, 0, 0, 0.5) !important;
+        margin-right: 2.5rem;
 }
 
 .contact:hover {
