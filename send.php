@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $form_type = $_POST['form_type'] ?? '';
 
     // ✅ STEP 1: Validate Google reCAPTCHA
-    $recaptchaSecret = 'YOUR_SECRET_KEY_HERE'; // ← Replace with your secret key from Google
+    $recaptchaSecret = '6LdqO34rAAAAAAnX4GImwtQk79iFk627680A7kx8'; // ← Replace with your secret key from Google
     $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
     // Check CAPTCHA is present

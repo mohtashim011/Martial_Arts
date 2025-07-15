@@ -460,7 +460,7 @@ function openPopup(index) {
     switch (index) {
         case 1:
             popupContent.innerHTML = `
-                <form id="class-registration-form">
+                <form id="class-registration-form" method="POST" action="send.php">
                     <h1 class="popup_header">JOIN OUR CLASSES</h1>
 
                     <div class="form-group">
