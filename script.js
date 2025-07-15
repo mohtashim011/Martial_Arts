@@ -628,27 +628,27 @@ document.head.appendChild(style);
 
 //code form GPT
 
-document.addEventListener('DOMContentLoaded', function () {
-  const backgroundSlider = document.querySelector('.background-slider');
+  window.addEventListener('DOMContentLoaded', function () {
+    const bgImages = [
+      './assets/images/hero_image_1.jpg',
+      './assets/images/hero_image_2.jpg',
+      './assets/images/hero_image_3.jpg',
+      './assets/images/hero_image_4.jpg',
+      './assets/images/hero_image_5.jpg'
+    ];
 
-  if (!backgroundSlider) return;
+    const selectedImage = bgImages[Math.floor(Math.random() * bgImages.length)];
+    const bgSlide = document.querySelector('.bg-slide');
 
-  const imagePaths = [
-    './assets/images/20250619_011059.png',
-    './assets/images/hero_image_3.png',
-    './assets/images/hero_image_4.png',
-    './assets/images/hero_image_5.png'
-  ];
+    if (!bgSlide) return;
 
-  const randomIndex = Math.floor(Math.random() * imagePaths.length);
-  const selectedImage = imagePaths[randomIndex];
-
-  // Set the background image of the single .bg-slide div
-  const bgSlide = backgroundSlider.querySelector('.bg-slide');
-  if (bgSlide) {
-    bgSlide.style.backgroundImage = `url('${selectedImage}')`;
-  }
-});
+    const img = new Image();
+    img.src = selectedImage;
+    img.onload = function () {
+      bgSlide.style.backgroundImage = `url('${selectedImage}')`;
+      bgSlide.classList.add('fade-in');
+    };
+  });
 
 
 // contact button to contact from
