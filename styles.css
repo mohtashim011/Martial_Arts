@@ -1218,8 +1218,8 @@ nav a.active {
 }
 .subheading{
     display: flex;
-    gap: 15%;
     align-items: center;
+    justify-content: space-between;
 }
 .subheading1 {
     font-family: 'Libre Caslon Text', sans-serif;
@@ -1258,9 +1258,10 @@ nav a.active {
     width: 100%;
 }
 .enroll-subitem{
-    display: flex;
+   display: flex;
     flex-direction: row;
-    gap: 31%;
+    justify-content: space-between;
+    gap: 18%;
 }
 .enroll-sub{
     width: 100%;
