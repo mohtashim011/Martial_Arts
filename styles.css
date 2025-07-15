@@ -539,9 +539,25 @@ nav a.active {
     margin-top: 5px;
 }
 
+.programs-button{
+     display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1.5rem !important;
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-family: 'Libre Caslon Text', sans-serif;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: 0.3s;
+    font-size: 1rem;
+    /* border-radius: 5px; */
+    border: 2px solid transparent;
+}
 .explore-btn,
-.philosophy-button,
-.programs-button {
+.philosophy-button {
     display: flex;
     align-items: center;
     gap: 10px;
