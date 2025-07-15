@@ -1433,7 +1433,7 @@ nav a.active {
 }
 .featured{
     height: 100%;
-    padding: 100px 0px;
+    padding: 150px 0px 30px 0px;
 }
 .logos-overlay {
     position: absolute;
@@ -1606,6 +1606,11 @@ nav a.active {
             
             flex-direction: row-reverse;
     }
+
+    .featured{
+    height: 100%;
+    padding: 100px 0px 300px 0px;
+}
    
 .logo_1 {
   opacity: 0;
