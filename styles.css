@@ -1119,6 +1119,7 @@ nav a.active {
     letter-spacing: 0px;
     border: 3px solid transparent;
     border-left: 7px solid red;
+    margin: 0 0 20px 50px;
 }
 
 .philosophy-text {
@@ -1426,12 +1427,12 @@ nav a.active {
 }
 
 .logo_container{
-    height: 30vh;
-    padding: 80px 0px;
+    /* height: 30vh;
+    padding: 80px 0px; */
     max-width: 1280px !important;
 }
 .featured{
-    height: 100vh;
+    height: 100%;
 }
 .logos-overlay {
     position: absolute;
@@ -2061,7 +2062,7 @@ nav a.active {
     }
     .featured-title {
         font-size: 30px;
-        margin: 0 0 20px 50px;
+        margin: 0 0 20px 20px;
         font-weight: 100;
     }
 
