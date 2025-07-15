@@ -1569,7 +1569,7 @@ nav a.active {
     header{
             justify-content: space-between;
             
-            padding: 10px 20px !important;
+            padding: 10px 10px !important;
             
             flex-direction: row-reverse;
     }
