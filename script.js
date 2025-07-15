@@ -630,7 +630,6 @@ document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', function () {
   const backgroundSlider = document.querySelector('.background-slider');
-
   if (!backgroundSlider) return;
 
   const imagePaths = [
@@ -643,11 +642,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const randomIndex = Math.floor(Math.random() * imagePaths.length);
   const selectedImage = imagePaths[randomIndex];
 
-  // Set the background image of the single .bg-slide div
-  const bgSlide = backgroundSlider.querySelector('.bg-slide');
-  if (bgSlide) {
-    bgSlide.style.backgroundImage = `url('${selectedImage}')`;
-  }
+  // Preload the image
+  const img = new Image();
+  img.src = selectedImage;
+
+  img.onload = function () {
+    const bgSlide = backgroundSlider.querySelector('.bg-slide');
+    if (bgSlide) {
+      bgSlide.style.backgroundImage = `url('${selectedImage}')`;
+      bgSlide.style.transition = 'background-image 0.3s ease-in-out'; // optional smoothness
+    }
+  };
 });
 
 
