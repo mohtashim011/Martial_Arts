@@ -628,7 +628,7 @@ document.head.appendChild(style);
 
 //code form GPT
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const backgroundSlider = document.querySelector('.background-slider');
   if (!backgroundSlider) return;
 
@@ -642,17 +642,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const randomIndex = Math.floor(Math.random() * imagePaths.length);
   const selectedImage = imagePaths[randomIndex];
 
-  // Preload the image
-  const img = new Image();
-  img.src = selectedImage;
+  const bgSlide = backgroundSlider.querySelector('.bg-slide');
+  if (!bgSlide) return;
 
-  img.onload = function () {
-    const bgSlide = backgroundSlider.querySelector('.bg-slide');
-    if (bgSlide) {
-      bgSlide.style.backgroundImage = `url('${selectedImage}')`;
-      bgSlide.style.transition = 'background-image 0.3s ease-in-out'; // optional smoothness
-    }
-  };
+  // Set background image instantly when browser starts fetching
+  bgSlide.style.backgroundImage = `url('${selectedImage}')`;
+
+  // Optional: preload all images in background (for future use if you plan slideshow)
+  imagePaths.forEach((path) => {
+    const img = new Image();
+    img.src = path;
+  });
 });
 
 
