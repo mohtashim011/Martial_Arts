@@ -1433,6 +1433,7 @@ nav a.active {
 }
 .featured{
     height: 100%;
+    padding: 100px 0px;
 }
 .logos-overlay {
     position: absolute;
