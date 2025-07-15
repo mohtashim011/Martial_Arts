@@ -1585,7 +1585,7 @@ nav a.active {
     header{
             justify-content: space-between;
             
-            padding: 10px 10px !important;
+            padding: 10px 0px !important;
             
             flex-direction: row-reverse;
     }
