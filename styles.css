@@ -1674,7 +1674,7 @@ nav a.active {
 
     .mobile-menu-toggle {
         display: block;
-        /* padding: 20px; */
+        padding: 20px;
     }
 }
 
