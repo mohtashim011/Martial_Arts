@@ -1564,6 +1564,7 @@ nav a.active {
             
             padding: 10px 0px !important;
             padding-left: 20px !important;
+            flex-direction: row-reverse;
     }
    
 .logo_1 {
