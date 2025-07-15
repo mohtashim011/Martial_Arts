@@ -2158,6 +2158,7 @@ nav a.active {
         height: 50px;
         display: flex;
         flex-direction: column;
+        gap:20px;
     }
 
     .mb_15_mobile {
