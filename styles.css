@@ -122,7 +122,14 @@ nav{
     display: inline-block; /* Added this line */
     background-color: transparent;
     cursor: pointer;
+    display: none;
 }
+
+@media (max-width: 1100px) {
+    .enrollment1 {
+        display: block !important;
+    }}
+
 .footer_links{
     border: navajowhite;
     background: transparent;
