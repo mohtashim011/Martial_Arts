@@ -1036,7 +1036,7 @@ nav a.active {
     max-width: 1280px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: 60px;
     flex-direction: row;
     /* Ensures image left, content right */
