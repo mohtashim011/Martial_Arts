@@ -166,7 +166,7 @@ nav{
   color: black;
   background: none;
   border: none;
-  font-size: 1.8rem;
+  font-size: 20px;
   cursor: pointer;
   z-index: 1001;
 }
@@ -1667,7 +1667,7 @@ nav a.active {
 
     .mobile-menu-toggle {
         display: block;
-        padding: 20px;
+        /* padding: 20px; */
     }
 }
 
