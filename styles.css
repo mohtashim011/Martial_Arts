@@ -109,7 +109,20 @@ nav{
 .contact:hover {
     transform: scale(1.05) !important;
 }
-
+.enrollment1{
+    color: rgb(0, 0, 0);
+    font-family: 'Libre Caslon Text', 'sans-serif';
+    margin-left: 1.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    /* border-radius: 4px; */
+    transition: all 0.3s ease;
+    display: inline-block; /* Added this line */
+    background-color: transparent;
+    cursor: pointer;
+}
 .footer_links{
     border: navajowhite;
     background: transparent;
