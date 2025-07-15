@@ -1119,7 +1119,6 @@ nav a.active {
     letter-spacing: 0px;
     border: 3px solid transparent;
     border-left: 7px solid red;
-    margin: 0 0 20px 50px;
 }
 
 .philosophy-text {
@@ -2199,8 +2198,8 @@ nav a.active {
         height: 50px;
         display: flex;
         flex-direction: column;
-        gap:20px;
-        /* height: 100vh; */
+        /* gap:20px; */
+        height: 100vh;
     }
 
     .mb_15_mobile {
