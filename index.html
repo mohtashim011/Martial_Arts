@@ -221,56 +221,56 @@
                             <div class="underline"></div>
                         </div>
 
-                        <div class="card">
-                            <div class="subheading">
-                            <h3 class="subheading1">Dates</h3>
-                            <h3 class="subheading2">Location</h3>
-                            <h3 class="subheading2">Enrollment</h3>
-                            </div>
-                            <div class="enroll-item">
-                                <div class="enroll-subitem">
-                                    <div class="enroll-sub"><h5 class="subsubheading">AUGUST 2025</h5>
-                                    <p>Wing Chun Kung Fu</p>
-                                    </div>
-                                <p>Ikoyi,Lagos,Nigeria</p></div>
-                                 <div><button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
-                                        src="./assets/images/Union (1).svg"></button></div>
-                            </div>
+                      <!-- Main Section -->
+<div class="card">
+  <div class="subheading">
+    <h3 class="subheading1">Upcoming</h3>
+    <h3 class="subheading2">Location</h3>
+    <h3 class="subheading2">Enrollment</h3>
+  </div>
 
-                            <div class="enroll-item">
-                                <div class="enroll-subitem">
-                                    <div class="enroll-sub"><h5 class="subsubheading">SEPTEMBER, 2025</h5>
-                                    <p>Tai Chi Kung Fu</p>
-                                    </div>
-                                <p>Ikoyi,Lagos,Nigeria</p></div>
-                                
-                                <div> <button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
-                                        src="./assets/images/Union (1).svg"></button></div>
-                            </div>
+  <div class="enroll-item">
+    <div class="enroll-subitem">
+      <div class="enroll-sub">
+        <h5 class="subsubheading">AUGUST 2025</h5>
+        <p>Wing Chun Kung Fu</p>
+      </div>
+      <p>Ikoyi, Lagos, Nigeria</p>
+    </div>
+    <div>
+      <button class="enroll-btn">ENROLL <img src="./assets/images/Union (1).svg"></button>
+    </div>
+  </div>
 
-                            <div class="enroll-item">
-                                
-                                <div class="enroll-subitem">
-                                    <div class="enroll-sub"><h5 class="subsubheading">OCTOBER, 2025</h5>
-                                    <p>Wing Chun Kung Fu</p>
-                                    </div>
-                                <p>Ikoyi,Lagos,Nigeria</p></div>
-                                <div><button class="enroll-btn" onclick="openPopup(1)">ENROLL <img
-                                        src="./assets/images/Union (1).svg"></button></div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="enroll-item">
+    <div class="enroll-subitem">
+      <div class="enroll-sub">
+        <h5 class="subsubheading">SEPTEMBER, 2025</h5>
+        <p>Tai Chi Kung Fu</p>
+      </div>
+      <p>Ikoyi, Lagos, Nigeria</p>
+    </div>
+    <div>
+      <button class="enroll-btn">ENROLL <img src="./assets/images/Union (1).svg"></button>
+    </div>
+  </div>
 
-                    <!-- POPUPS -->
-                    <div class="popup-overlay" id="popupOverlay">
-                        <div class="popup-box" id="popupBox">
-                            <span class="close-btn" onclick="closePopup()">×</span>
-                            <div id="popupContent">Popups</div>
-                        </div>
-                    </div>
+  <div class="enroll-item">
+    <div class="enroll-subitem">
+      <div class="enroll-sub">
+        <h5 class="subsubheading">OCTOBER, 2025</h5>
+        <p>Wing Chun Kung Fu</p>
+      </div>
+      <p>Ikoyi, Lagos, Nigeria</p>
+    </div>
+    <div>
+      <button class="enroll-btn">ENROLL <img src="./assets/images/Union (1).svg"></button>
+    </div>
+  </div>
+</div>
+
                 </section>
             </div>
-
             <div class="swiper-slide">
                 <section class="spot-section">
                     <div class="spot_container">
@@ -390,6 +390,54 @@
                                     </div>
                                 </div>
 
+<!-- Testing registratio form -->
+            <section>
+
+
+<!-- Popup -->
+<div id="popupOverlay" class="popup-overlay" style="display: none;">
+  <div class="popup-form">
+    <button id="closePopupBtn" class="close-popup">&times;</button>
+
+    <h1>JOIN OUR CLASSES</h1>
+
+    <form action="send.php" method="POST">
+      <input type="hidden" name="form_type" value="registration">
+
+      <label for="full_name">Full Name *</label>
+      <input type="text" name="full_name" id="full_name" required>
+
+      <label for="email">Email *</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="phone">Phone *</label>
+      <input type="tel" name="phone" id="phone" required>
+
+      <div class="checkbox-group">
+        <label>Are you asthmatic?</label>
+        <label><input type="checkbox" name="asthmatic[]" value="Yes"> Yes</label>
+        <label><input type="checkbox" name="asthmatic[]" value="No"> No</label>
+      </div>
+
+      <div class="checkbox-group">
+        <label>Do you have any physical injury we should be mindful of?</label>
+        <label><input type="checkbox" name="injury[]" value="Yes"> Yes</label>
+        <label><input type="checkbox" name="injury[]" value="No"> No</label>
+      </div>
+
+      <div class="g-recaptcha" data-sitekey="6LdqO34rAAAAABLT5O0gURyMLHyo_h3UbsTVmB3c"></div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+  <!-- JS to open/close popup -->
+  
+
+
+            </section>
+
                                 <div class="footer-column">
                                     <h3 class="footer_contact">Quick Links</h3>
                                     <ul class="footer-links">
@@ -433,6 +481,33 @@
                     </div>
                 </section>
             </div>
+<script>
+  const popup = document.getElementById('popupOverlay');
+  const closeBtn = document.getElementById('closePopupBtn');
+  const enrollButtons = document.querySelectorAll('.enroll-btn');
+
+  // Show popup on any enroll button click
+  enrollButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      popup.style.display = 'flex';
+    });
+  });
+
+  // Close popup
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Close popup on clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) popup.style.display = 'none';
+  });
+
+  // Close popup on ESC key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') popup.style.display = 'none';
+  });
+</script>
 
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
